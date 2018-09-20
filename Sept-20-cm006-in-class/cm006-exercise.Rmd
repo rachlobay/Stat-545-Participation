@@ -72,7 +72,7 @@ ggplot(gapminder, aes(lifeExp, gdpPercap)) +
 
 
 7. The aesthetic mappings can be specified on the geom layer if you want, instead of the main `ggplot` call. Give it a try:
-
+####################################################
 
 8. Optional: git stage and commit
 
@@ -182,10 +182,11 @@ Let's hold off on identifying the grammar.
 
 1. Initiate the `ggplot` call to make a scatterplot of `continent` vs `pop`; initiate the log y scale. Store the call in the variable `b`.
 
-
+####################################################
 
 2. Add the point geom to `b`. Why is this an ineffective plot?
 
+####################################################
 
 
 3. A solution is to jitter the points. Add the jitter geom. Re-run the command a few times -- does the plot change? Why?
