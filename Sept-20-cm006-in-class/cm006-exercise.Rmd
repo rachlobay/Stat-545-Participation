@@ -181,19 +181,19 @@ Let's work up to the concept of a _jitter plot_. As above, let's explore the pop
 Let's hold off on identifying the grammar. 
 
 1. Initiate the `ggplot` call to make a scatterplot of `continent` vs `pop`; initiate the log y scale. Store the call in the variable `b`.
+```{r}
+a + geom_jitter(alpha = 0.1)
+```
 
 ####################################################
 
 2. Add the point geom to `b`. Why is this an ineffective plot?
 
-####################################################
-
-
-3. A solution is to jitter the points. Add the jitter geom. Re-run the command a few times -- does the plot change? Why?
-
 ```{r}
 a + geom_jitter(alpha = 0.25)
 ```
+
+3. A solution is to jitter the points. Add the jitter geom. Re-run the command a few times -- does the plot change? Why?
 
 
 4. How does the grammar differ from a box plot or violin plot?
