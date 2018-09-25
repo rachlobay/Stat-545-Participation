@@ -90,17 +90,72 @@ Make a line plot of `gdpPercap` over time for all countries. Colour by `lifeExp 
 
 Try adding colour to a histogram. How is this different?
 
+
+```r
+ggplot(gapminder, aes(lifeExp)) + geom_histogram(aes(fill = continent))
+```
+
+```
+## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+```
+
+![](cm007-exercise_files/figure-html/unnamed-chunk-6-1.png)<!-- -->
+
+
 ## Facetting
 
 Make histograms of `gdpPercap` for each continent. Try the `scales` and `ncol` arguments. 
 
+
+```r
+ggplot(gapminder, aes(lifeExp)) +
+  facet_wrap( ~ continent, scales = "free_x") + 
+  geom_histogram()
+```
+
+```
+## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+```
+
+![](cm007-exercise_files/figure-html/unnamed-chunk-7-1.png)<!-- -->
+
 Remove Oceania. Add another variable: `lifeExp > 60`. 
+
+
+```r
+ggplot(gapminder, aes(gdpPercap)) +
+  facet_grid(continent ~ lifeExp > 60) + 
+  geom_histogram()
+```
+
+```
+## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+```
+
+![](cm007-exercise_files/figure-html/unnamed-chunk-8-1.png)<!-- -->
 
 ## Bubble Plots
 
 - Add a `size` aesthetic to a scatterplot. What about `cex`?
+
+
+```r
+gvsl + geom_point(aes(size = pop), alpha = 0.2)  + 
+  scale_size_area() # size of the bubbles is proportional to the population
+```
+
+![](cm007-exercise_files/figure-html/unnamed-chunk-9-1.png)<!-- -->
+
 - Try adding `scale_radius()` and `scale_size_area()`. What's better?
 - Use `shape=21` to distinguish between `fill` (interior) and `colour` (exterior).
+
+
+```r
+gvsl + geom_point(aes(size = pop, fill = continent), shape = 21, color = "black", alpha = 0.2)
+```
+
+![](cm007-exercise_files/figure-html/unnamed-chunk-10-1.png)<!-- -->
+
 
 ## "Complete" plot
 
@@ -109,6 +164,15 @@ Let's try plotting much of the data.
 - gdpPercap vs lifeExp with pop bubbles
 - facet by year
 - colour by continent
+
+
+```r
+gvsl + geom_point(aes(size = pop, color = continent)) + 
+  scale_size_area() + # area proportional to pop.
+  facet_wrap(~ year)
+```
+
+![](cm007-exercise_files/figure-html/unnamed-chunk-11-1.png)<!-- -->
 
 
 

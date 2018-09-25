@@ -88,8 +88,19 @@ ggplot(gapminder, aes(gdpPercap)) +
 ## Bubble Plots
 
 - Add a `size` aesthetic to a scatterplot. What about `cex`?
+
+```{r}
+gvsl + geom_point(aes(size = pop), alpha = 0.2)  + 
+  scale_size_area() # size of the bubbles is proportional to the population
+```
+
 - Try adding `scale_radius()` and `scale_size_area()`. What's better?
 - Use `shape=21` to distinguish between `fill` (interior) and `colour` (exterior).
+
+```{r}
+gvsl + geom_point(aes(size = pop, fill = continent), shape = 21, color = "black", alpha = 0.2)
+```
+
 
 ## "Complete" plot
 
@@ -98,6 +109,12 @@ Let's try plotting much of the data.
 - gdpPercap vs lifeExp with pop bubbles
 - facet by year
 - colour by continent
+
+```{r}
+gvsl + geom_point(aes(size = pop, color = continent)) + 
+  scale_size_area() + # area proportional to pop.
+  facet_wrap(~ year)
+```
 
 
 
