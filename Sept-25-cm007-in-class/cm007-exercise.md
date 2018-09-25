@@ -74,10 +74,16 @@ gvsl + geom_point(aes(colour = continent))
     
 
 ```r
-gvsl + geom_point(aes(colour = pop))
+gvsl + geom_point(aes(colour = pop)) + scale_colour_continuous(trans = "log10")
 ```
 
 ![](cm007-exercise_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
+
+```r
+gvsl + geom_point(aes(colour = lifeExp > 60))
+```
+
+![](cm007-exercise_files/figure-html/unnamed-chunk-5-2.png)<!-- -->
 
 Make a line plot of `gdpPercap` over time for all countries. Colour by `lifeExp > 60` (remember that `lifeExp` looks bimodal?)
 
