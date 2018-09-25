@@ -5,7 +5,8 @@ output:
     keep_md: true
 ---
 
-```{r}
+
+```r
 library(gapminder)
 library(ggplot2)
 ```
@@ -20,22 +21,38 @@ Switch focus to exploring aesthetic mappings, instead of geoms.
 
 - Try a scatterplot of `gdpPercap` vs `pop` with a categorical variable (continent) as `shape`.
     
-```{r}
+
+```r
 gvsl <- ggplot(gapminder ,aes(gdpPercap,lifeExp)) + scale_x_log10()
 
 gvsl + geom_point(aes(shape=continent), alpha = 0.2)
 ```
+
+![](cm007-exercise_files/figure-html/unnamed-chunk-2-1.png)<!-- -->
 
 - As with all (?) aesthetics, we can also have them _not_ as aesthetics!
     - Try some shapes: first as integer from 0-24, then as keyboard characters.
     - What's up with `pch`?
     
     
-```{r}
+
+```r
 gvsl + geom_point(shape = 7)
+```
+
+![](cm007-exercise_files/figure-html/unnamed-chunk-3-1.png)<!-- -->
+
+```r
 gvsl + geom_point(pch = 7)
+```
+
+![](cm007-exercise_files/figure-html/unnamed-chunk-3-2.png)<!-- -->
+
+```r
 gvsl + geom_point(shape = "$")
 ```
+
+![](cm007-exercise_files/figure-html/unnamed-chunk-3-3.png)<!-- -->
 
 List of shapes can be found [at the bottom of the `scale_shape` documentation](https://ggplot2.tidyverse.org/reference/scale_shape.html).
 
