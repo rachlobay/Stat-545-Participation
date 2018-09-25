@@ -192,6 +192,11 @@ __Uses of bar plots__: Get a sense of relative quantities of categories, or see 
 
 - Add `coord_polar()` to a scatterplot.
 
+```{r}
+gvsl + geom_point() + coord_polar()
+```
+
+
 
 # Want more practice?
 
