@@ -1,7 +1,6 @@
 ---
 title: "cm007 Exercises: Exploring Aesthetic Mappings"
-output: 
-  github_markdown:
+output:
   html_document:
     keep_md: true
 ---
@@ -129,6 +128,18 @@ Let's see how Rwanda's life expectancy and GDP per capita have evolved over time
 - Add `arrow=arrow()` option.
 - Add `geom_text`, with year label. 
 
+```{r}
+library(dplyr)
+
+gapminder %>% 
+  filter(country == "Rwanda") %>% 
+  arrange(year) %>% 
+  ggplot(aes(gdpPercap, lifeExp)) +
+  # scale_x_log10() + 
+  geom_point() + 
+  geom_path(arrow = arrow())
+```
+
 
 ## Two categorical variables
 
@@ -137,6 +148,12 @@ Try `cyl` (number of cylinders) ~ `am` (transmission) in the `mtcars` data frame
 - Scatterplot? Jitterplot? No.
 - `geom_count()`.
 - `geom_bin2d()`. Compare with `geom_tile()` with `fill` aes.
+
+```{r}
+ggplot(mtcars, aes(factor(cyl), factor(am))) + 
+  geom_bin2d()
+```
+
 
 ## Overplotting
 
@@ -148,9 +165,16 @@ Try a scatterplot with:
 - `geom_smooth()`
 
 
+```{r}
+gvsl + geom_hex()
+gvsl + geom_density2d()
+gvsl + geom_point(alpha = 0.1) + geom_smooth(method = "lm")
+```
+
 ## Bar plots
 
 How many countries are in each continent? Use the year 2007.
+
 
 1. After filtering the gapminder data to 2007, make a bar chart of the number of countries in each continent. Store everything except the geom in the variable `d`.
 
