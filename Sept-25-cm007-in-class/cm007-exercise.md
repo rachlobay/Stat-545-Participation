@@ -12,7 +12,6 @@ library(ggplot2)
 ```
 
 
-
 # Beyond the x and y aesthetics
 
 Switch focus to exploring aesthetic mappings, instead of geoms. 
@@ -61,10 +60,24 @@ List of shapes can be found [at the bottom of the `scale_shape` documentation](h
 Make a scatterplot. Then:
 
 - Try colour as categorical variable.
+
+
+```r
+gvsl + geom_point(aes(colour = continent))
+```
+
+![](cm007-exercise_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
+
 - Try `colour` and `color`. 
 - Try colour as numeric variable.
     - Try `trans="log10"` for log scale.
+    
 
+```r
+gvsl + geom_point(aes(colour = pop))
+```
+
+![](cm007-exercise_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
 
 Make a line plot of `gdpPercap` over time for all countries. Colour by `lifeExp > 60` (remember that `lifeExp` looks bimodal?)
 
