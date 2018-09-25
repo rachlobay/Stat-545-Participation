@@ -1,6 +1,10 @@
 ---
 title: "cm007 Exercises: Exploring Aesthetic Mappings"
-output: github_document
+output: 
+  github_markdown:
+  html_document:
+    keep_md: true
+---
 
 ```{r}
 library(gapminder)
