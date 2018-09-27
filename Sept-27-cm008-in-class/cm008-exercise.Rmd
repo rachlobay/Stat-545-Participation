@@ -1,9 +1,7 @@
 ---
 title: "cm008 Exercises"
-output: html_notebook
-editor_options: 
-  chunk_output_type: inline
----
+output: github_document
+
 
 ```{r}
 suppressPackageStartupMessages(library(tidyverse))
