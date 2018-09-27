@@ -150,12 +150,6 @@ Convenience functions:
 
 n_distinct: How many years of record does each country have?
 
-```{r}
-
-```
-
-count
-
 ## Function types
 
 Let's stop to identify some theory of function types, and the `dplyr` approach to them.
@@ -173,7 +167,13 @@ For any generic output, we can use dplyr's `do()` function -- but that's a topic
 Calculate the growth in population since the first year on record _for each country_. `first()` is useful.
 
 ```{r}
+gapminder %>% 
+  group_by(country) %>% 
+  mutate(growth = pop - first(pop))
 
+gapminder %>% 
+  group_by(country) %>% 
+  mutate(change = pop - lag(pop))
 ```
 
 Notice that `dplyr` has retained the original grouping.
@@ -181,7 +181,9 @@ Notice that `dplyr` has retained the original grouping.
 How about growth compared to `1972`?
 
 ```{r}
-
+gapminder %>% 
+  group_by(country) %>% 
+  mutate(growth = pop - pop[year == 1972])
 ```
 
 Make a new variable `pop_last_time`, as the "lag-1" population -- that is, the population from the previous entry of that country. Use the `lag` function.
