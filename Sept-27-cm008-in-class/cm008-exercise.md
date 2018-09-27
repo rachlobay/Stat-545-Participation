@@ -219,10 +219,104 @@ gapminder %>%
 
 Your turn! For each continent, what is the median GDP per capita of countries with high (&gt;60) life expectancy vs countries with low (&lt;=60)? Sort this data frame by median GDP per capita.
 
+``` r
+gapminder %>% 
+  group_by(continent, lifeExp > 60) %>% 
+  summarize(md = median(gdpPercap)) %>% 
+  arrange(md)
+```
+
+    ## # A tibble: 9 x 3
+    ## # Groups:   continent [5]
+    ##   continent `lifeExp > 60`     md
+    ##   <fct>     <lgl>           <dbl>
+    ## 1 Asia      FALSE           1031.
+    ## 2 Africa    FALSE           1071.
+    ## 3 Europe    FALSE           2384.
+    ## 4 Americas  FALSE           3080.
+    ## 5 Africa    TRUE            4442.
+    ## 6 Asia      TRUE            5250.
+    ## 7 Americas  TRUE            6678.
+    ## 8 Europe    TRUE           12672.
+    ## 9 Oceania   TRUE           17983.
+
+``` r
+gapminder %>% 
+  mutate(hvsl = if_else(lifeExp > 60 , "high", "low")) %>% 
+  group_by(continent, hvsl) %>% 
+  summarize(md = median(gdpPercap)) %>% 
+  arrange(md)
+```
+
+    ## # A tibble: 9 x 3
+    ## # Groups:   continent [5]
+    ##   continent hvsl      md
+    ##   <fct>     <chr>  <dbl>
+    ## 1 Asia      low    1031.
+    ## 2 Africa    low    1071.
+    ## 3 Europe    low    2384.
+    ## 4 Americas  low    3080.
+    ## 5 Africa    high   4442.
+    ## 6 Asia      high   5250.
+    ## 7 Americas  high   6678.
+    ## 8 Europe    high  12672.
+    ## 9 Oceania   high  17983.
+
+``` r
+gapminder %>% 
+  mutate(age = if_else(lifeExp > 60, "high", "low")) %>% 
+  group_by(continent, age) %>% 
+  summarize(md = median(gdpPercap))
+```
+
+    ## # A tibble: 9 x 3
+    ## # Groups:   continent [?]
+    ##   continent age       md
+    ##   <fct>     <chr>  <dbl>
+    ## 1 Africa    high   4442.
+    ## 2 Africa    low    1071.
+    ## 3 Americas  high   6678.
+    ## 4 Americas  low    3080.
+    ## 5 Asia      high   5250.
+    ## 6 Asia      low    1031.
+    ## 7 Europe    high  12672.
+    ## 8 Europe    low    2384.
+    ## 9 Oceania   high  17983.
+
 There are special functions to summarize by. Let's see some of them:
 
--   `n()`: Number of rows in the group.
--   `n_distinct()`
+-   `n()`: Counts the \# of rows in the group.
+-   `n_distinct()`:
+
+``` r
+gapminder %>% 
+  group_by(continent) %>% 
+  #summarize(num = n())
+  tally()
+```
+
+    ## # A tibble: 5 x 2
+    ##   continent     n
+    ##   <fct>     <int>
+    ## 1 Africa      624
+    ## 2 Americas    300
+    ## 3 Asia        396
+    ## 4 Europe      360
+    ## 5 Oceania      24
+
+``` r
+gapminder %>% 
+  count(continent)
+```
+
+    ## # A tibble: 5 x 2
+    ##   continent     n
+    ##   <fct>     <int>
+    ## 1 Africa      624
+    ## 2 Americas    300
+    ## 3 Asia        396
+    ## 4 Europe      360
+    ## 5 Oceania      24
 
 Convenience functions:
 

@@ -109,13 +109,39 @@ gapminder %>%
 Your turn! For each continent, what is the median GDP per capita of countries with high (>60) life expectancy vs countries with low (<=60)? Sort this data frame by median GDP per capita.
 
 ```{r}
+gapminder %>% 
+  group_by(continent, lifeExp > 60) %>% 
+  summarize(md = median(gdpPercap)) %>% 
+  arrange(md)
 
+gapminder %>% 
+  mutate(hvsl = if_else(lifeExp > 60 , "high", "low")) %>% 
+  group_by(continent, hvsl) %>% 
+  summarize(md = median(gdpPercap)) %>% 
+  arrange(md)
+
+
+gapminder %>% 
+  mutate(age = if_else(lifeExp > 60, "high", "low")) %>% 
+  group_by(continent, age) %>% 
+  summarize(md = median(gdpPercap))
 ```
 
 There are special functions to summarize by. Let's see some of them:
 
-- `n()`: Number of rows in the group.
-- `n_distinct()`
+- `n()`: Counts the # of rows in the group.
+- `n_distinct()`: 
+
+```{r}
+gapminder %>% 
+  group_by(continent) %>% 
+  #summarize(num = n())
+  tally()
+
+gapminder %>% 
+  count(continent)
+```
+
 
 Convenience functions:
 
