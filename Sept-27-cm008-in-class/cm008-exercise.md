@@ -444,9 +444,9 @@ gapminder %>%
     ## 10 Afghanistan Asia       1997    41.8 22227415      635.  9147955
     ## # ... with 1,694 more rows
 
-Make a new variable `pop_last_time`, as the "lag-1" population -- that is, the population from the previous entry of that country. Use the `lag` function.
+Make a new variable `pop_last_time`, as the "lag-1" population -- that is, the population from the previous entry of that country. Use the `lag` function. \# shifts vector fowards
 
-Similar: `lead` function.
+Similar: `lead` function. \# shifts vector backwards
 
 Notice the NA's.
 
@@ -457,7 +457,26 @@ Your turn: Use what we learned to answer the following questions.
 
 1.  Determine the country that experienced the sharpest 5-year drop in life expectancy, in each continent.
 
-2.  Compute the relative gdp (NOT per capita!) of each country compared to Canada (= GDP of a country / GDP of Canada).
+``` r
+gapminder %>% 
+  group_by(continent, country) %>% 
+  mutate(gain = lifeExp - lag(lifeExp)) %>% 
+  filter(!is.na(gain)) %>% # lag() looks at last time
+  summarize(min = min(gain)) %>% 
+  summarize(min = min(min)) %>% 
+  arrange(min)
+```
+
+    ## # A tibble: 5 x 2
+    ##   continent     min
+    ##   <fct>       <dbl>
+    ## 1 Africa    -20.4  
+    ## 2 Asia       -9.10 
+    ## 3 Americas   -1.51 
+    ## 4 Europe     -1.46 
+    ## 5 Oceania     0.170
+
+1.  Compute the relative gdp (NOT per capita!) of each country compared to Canada (= GDP of a country / GDP of Canada).
 
 Sanity check: are Canada's numbers = 1? What is the spread of numbers like (should be small)?
 
