@@ -1,7 +1,7 @@
 ---
 title: "cm008 Exercises"
 output: github_document
-
+---
 
 ```{r}
 suppressPackageStartupMessages(library(tidyverse))
@@ -16,7 +16,9 @@ Let's get:
 - GDP in billions, named (`gdpBill`), rounded to two decimals.
 
 ```{r}
-
+gapminder %>% 
+mutate(gdp = gdpPercap * pop,
+gdpBill  = round(gdp / 10 ^9, 2 ))
 ```
 
 
@@ -25,7 +27,9 @@ Notice the backwards compatibility! No need for loops!
 Try the same thing, but with `transmute` (drops all other variables). 
 
 ```{r}
-
+gapminder %>% 
+transmute (gdp = gdpPercap * pop,
+gdpBill  = round(gdp / 10 ^9, 2 ))
 ```
 
 The `if_else` function is useful for changing certain elements in a data frame.
@@ -33,14 +37,18 @@ The `if_else` function is useful for changing certain elements in a data frame.
 Example: Suppose Canada's 1952 life expectancy was mistakenly entered as 68.8 in the data frame, but is actually 70. Fix it using `if_else` and `mutate`. 
 
 ```{r}
-
+if_else(letters == "h", "H", letters)
+gapminder %>% 
+  mutate(lifeExp = if_else(country == "Canada" & year == 1952, 70, lifeExp)) %>% 
+  filter(country == "Canada")
 ```
 
 
 Your turn: Make a new column called `cc` that pastes the country name followed by the continent, separated by a comma. (Hint: use the `paste` function with the `sep=", "` argument).
 
 ```{r}
-
+gapminder %>% 
+  mutate(cc = paste(country, continent, sep=", "))
 ```
 
 These functions we've seen are called __vectorized functions__. 
@@ -50,6 +58,8 @@ These functions we've seen are called __vectorized functions__.
 Use `summarize()` to compute the mean and median life expectancy using all entries:
 
 ```{r}
+gapminder %>% 
+  summarize(mu = mean(lifeExp), md = median(lifeExp))
 
 ```
 
@@ -59,6 +69,15 @@ Do the same thing, but try:
 2. grouping by continent and country
 
 ```{r}
+gapminder %>% 
+  group_by(country) %>% 
+  summarize(mu = mean(lifeExp),
+            md = median(lifeExp))
+
+gapminder %>% 
+  group_by(continent, country) %>% 
+  summarize(mu = mean(lifeExp),
+            md = median(lifeExp))
 
 ```
 
@@ -71,13 +90,19 @@ Question: What if I wanted to keep the other numeric columns (gdpPercap, pop)? C
 For each continent: What is the smallest country-wide median GDP per capita?
 
 ```{r}
-
+gapminder %>% 
+  group_by(continent, country) %>% 
+  summarize(md = median(gdpPercap)) %>% 
+  summarize(min = min(md))
 ```
 
 Note that ggplot2's grouping is different from dplyr's! Try making a spaghetti plot of lifeExp over time for each coutry, by piping in a grouped data frame -- it won't work:
 
 ```{r}
-
+gapminder %>% 
+  group_by(country) %>% 
+  ggplot(aes(year, lifeExp)) +
+  geom_line() 
 ```
 
 
