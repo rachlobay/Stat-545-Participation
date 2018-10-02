@@ -1,122 +1,162 @@
 ---
-title: "STAT 545 Class Meeting 09: Tidy Data"
-output:
-    html_notebook:
-        toc: true
-        theme: cerulean
-        number_sections: true
+title: "cm009 Exercises: tidy data"
+output: html_notebook
 editor_options: 
   chunk_output_type: inline
 ---
 
-## Review, and Looking Ahead
 
-For the past two weeks, we've been looking at "clean" exploratory data analysis by:
+```{r}
+suppressPackageStartupMessages(library(tidyverse))
+```
 
-- Wrangling single data frames with `dplyr`
-- Making plots of that data with `ggplot2`
+## Reading and Writing Data: Exercises
 
-This is a powerful framework for drawing information from data. 
+Make a tibble of letters, their order in the alphabet, and then a pasting of the two columns together.
 
-This week, we'll focus on data not in an immediately ready-to-use format:
+```{r}
+tibble(let = letters,
+       num = 1:length(letters),
+       comb = paste(let, num))
+```
+Make a tibble of three names and commute times.
 
-- Today: data reshaping
-- Thursday: joining two tables (Rashedul to take the lead)
+```{r}
+tribble(
+~name, ~time,
+"Frank", 10,
+"Lisa", 40,
+"Fred", 40)
 
-Starting next week, the rest of the course will look at more advanced versions of what we've seen:
-
-- R programming
-- Factors
-- Plotting (including `plotly`).
-
-We'll finish with a discussion on the model-fitting paradigm in R, and the `broom` package.  
-
-
-## Today's Lessons
-
-Today's lessons are:
-
-- `readr`: Reading and writing data into and out of R
-- `tidyr`: Tidying and untidying data
-- Time permitting: other `tidyr` goodies
-
-## Resources
-
-Concepts from today's class are closely mirrored by Jenny Bryan's [LOTR tidy data lesson](https://github.com/jennybc/lotr-tidy#readme).
-
-## Participation
-
-To get participation points for today, fill out the cm009-exercise.Rmd file with the class (get it from [Rmd](https://github.com/STAT545-UBC/Classroom/blob/master/notes/cm009-exercise.Rmd), or [from html](http://stat545.com/Classroom/notes/cm009-exercise.html)), and add it to your participation repo.
-
-# Reading and Writing data
-
-## Working Directory 
-
-R has a notion of "working directory". You can get with `getwd()`, set (with caution) with `setwd()`.
-
-## The functions
-
-Let's see an example of how tabular data are stored:
-
-- csv example: [gapminder](https://raw.githubusercontent.com/STAT545-UBC/Classroom/master/gapminder.csv)
-- tsv example: [LOTR](https://raw.githubusercontent.com/jennybc/lotr/master/lotr_clean.tsv)
-
-Reading and writing csv's
-
-| Tool | Reading | Writing |
-|------|---------|---------|
-| Base R | `read.csv()` | `write.csv()` |
-| tidyverse (`readr`) | `read_csv()` | `write_csv()` |
-
-Reading and writing tsv's
-
-| Tool | Reading | Writing |
-|------|---------|---------|
-| Base R | `read.delim()` | `write.table(sep="\t")` |
-| tidyverse (`readr`) | `read_tsv()` | `write_tsv()` |
+```
 
 
-Reading and writing delimited files in general
+Write the `iris` data frame as a `csv`. 
 
-| Tool | Reading | Writing |
-|------|---------|---------|
-| Base R | `read.delim()` | `write.table()` |
-| tidyverse (`readr`) | `read_delim()` | `write_delim()` |
+```{r}
 
-With Base R: beware the factors with `read.csv()`!
+```
 
-## Making tibbles within R
+Write the `iris` data frame to a file delimited by a dollar sign. 
 
-Base R: `data.frame()` function.
+```{r}
 
-Tidyverse version: `tibble()` function from `tibble` package.
+```
 
-Truly manual construction of tibbles: `tribble()` from the `tibble` package. 
+Read the dollar-delimited `iris` data to a tibble.
 
-# Tidy Data
+```{r}
 
-## Learning Objectives
+```
 
-Here are the concepts we'll be exploring in this lesson:
+Read these three LOTR csv's, saving them to `lotr1`, `lotr2`, and `lotr3`:
 
-- tidy data
-- gather
-- spread
+- https://raw.githubusercontent.com/jennybc/lotr-tidy/master/data/The_Fellowship_Of_The_Ring.csv
+- https://raw.githubusercontent.com/jennybc/lotr-tidy/master/data/The_Two_Towers.csv
+- https://github.com/jennybc/lotr-tidy/blob/master/data/The_Return_Of_The_King.csv
 
-By the end of this lesson, students are expected to be able to:
+```{r}
 
-- identify when data are tidy, and when they are not.
-- when either form is useful.
-- use the `tidy::gather()` and `tidyr::spread()` functions to convert between tidy and untidy data
+```
 
-## Tidy Data
+## `gather()`
 
-We'll look at Jenny's [intro](https://github.com/jennybc/lotr-tidy/blob/master/01-intro.md) page for an example of tidy/untidy data. 
+(Exercises largely based off of Jenny Bryan's [gather tutorial](https://github.com/jennybc/lotr-tidy/blob/master/02-gather.md))
 
-## gather and spread
+This function is useful for making untidy data tidy (so that computers can more easily crunch the numbers).
 
-History: Data reshaping has not been the most natural thing to program. First came the `reshape` package. Then the `reshape2` package. Now the `tidyr` package makes it easy(er).
+1. Combine the three LOTR untidy tables (`lotr1`, `lotr2`, `lotr3`) to a single untidy table by stacking them.  
 
-Spreadsheets like Excel? pivot. 
+```{r}
 
-Let's try some exercises. 
+```
+
+2. Convert to tidy. Also try this by specifying columns as a range, and with the `contains()` function.
+
+```{r}
+
+```
+
+3. Try again (bind and tidy the three untidy data frames), but without knowing how many tables there are originally. 
+    - The additional work here does not require any additional tools from the tidyverse, but instead uses a `do.call` from base R -- a useful tool in data analysis when the number of "items" is variable/unknown, or quite large. 
+
+```{r}
+
+```
+
+## `spread()`
+
+(Exercises largely based off of Jenny Bryan's [spread tutorial](https://github.com/jennybc/lotr-tidy/blob/master/03-spread.md))
+
+This function is useful for making tidy data untidy (to be more pleasing to the eye).
+
+Read in the tidy LOTR data (despite having just made it):
+
+```{r}
+lotr_tidy <- read_csv("https://raw.githubusercontent.com/jennybc/lotr-tidy/master/data/lotr_tidy.csv")
+```
+
+Get word counts across "Race". Then try "Gender". 
+
+```{r}
+
+```
+
+Now try combining race and gender. Use `unite()` from `tidyr` instead of `paste()`. 
+
+```{r}
+
+```
+
+## Other `tidyr` goodies
+
+Check out the Examples in the documentation to explore the following.
+
+`expand` vs `complete` (trim vs keep everything). Together with `nesting`. Check out the Examples in the `expand` documentation.
+
+```{r}
+
+```
+
+`separate_rows`: useful when you have a variable number of entries in a "cell".
+
+```{r}
+
+```
+
+`unite` and `separate`.
+
+```{r}
+
+```
+
+`uncount` (as the opposite of `dplyr::count()`)
+
+```{r}
+
+```
+
+
+`drop_na` and `replace_na`
+
+```{r}
+
+```
+
+`fill`
+
+```{r}
+
+```
+
+
+`full_seq`
+
+```{r}
+
+```
+
+
+## Time remaining?
+
+Time permitting, do [this exercise](https://github.com/jennybc/lotr-tidy/blob/master/02-gather.md#exercises) to practice tidying data. 
