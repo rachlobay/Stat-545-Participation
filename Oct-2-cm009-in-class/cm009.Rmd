@@ -60,7 +60,7 @@ lotr1 <- read_csv("https://raw.githubusercontent.com/jennybc/lotr-tidy/master/da
 
 lotr2 <- read_csv("https://raw.githubusercontent.com/jennybc/lotr-tidy/master/data/The_Two_Towers.csv")
 
-lotr3 <- read_csv("https://github.com/jennybc/lotr-tidy/blob/master/data/The_Return_Of_The_King.csv")
+lotr3 <- read_csv("https://raw.githubusercontent.com/jennybc/lotr-tidy/master/data/The_Return_Of_The_King.csv")
 ```
 
 ## `gather()`
