@@ -34,19 +34,19 @@ tribble(
 Write the `iris` data frame as a `csv`. 
 
 ```{r}
-
+write_csv(iris, "iris.csv")
 ```
 
 Write the `iris` data frame to a file delimited by a dollar sign. 
 
 ```{r}
-
+write_delim(iris, "iris.txt", delim = "$")
 ```
 
 Read the dollar-delimited `iris` data to a tibble.
 
 ```{r}
-
+read_delim("iris.txt", delim="$")
 ```
 
 Read these three LOTR csv's, saving them to `lotr1`, `lotr2`, and `lotr3`:
@@ -56,7 +56,11 @@ Read these three LOTR csv's, saving them to `lotr1`, `lotr2`, and `lotr3`:
 - https://github.com/jennybc/lotr-tidy/blob/master/data/The_Return_Of_The_King.csv
 
 ```{r}
+lotr1 <- read_csv("https://raw.githubusercontent.com/jennybc/lotr-tidy/master/data/The_Fellowship_Of_The_Ring.csv")
 
+lotr2 <- read_csv("https://raw.githubusercontent.com/jennybc/lotr-tidy/master/data/The_Two_Towers.csv")
+
+lotr3 <- read_csv("https://github.com/jennybc/lotr-tidy/blob/master/data/The_Return_Of_The_King.csv")
 ```
 
 ## `gather()`
