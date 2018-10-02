@@ -146,7 +146,7 @@ $(document).ready(function () {
 </style>
 <script>
 $(document).ready(function () {
-  window.initializeSourceEmbed("cm009.Rmd");
+  window.initializeSourceEmbed("cm009-exercise.Rmd");
   window.initializeCodeFolding("show" === "show");
 });
 </script>
@@ -178,9 +178,6 @@ $(document).ready(function () {
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VwcHJlc3NQYWNrYWdlU3RhcnR1cE1lc3NhZ2VzKGxpYnJhcnkodGlkeXZlcnNlKSlcbmBgYCJ9 -->
-<pre class="r"><code>suppressPackageStartupMessages(library(tidyverse))</code></pre>
-<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <div id="reading-and-writing-data-exercises" class="section level2">
@@ -246,9 +243,36 @@ $(document).ready(function () {
 <p>Read the dollar-delimited <code>iris</code> data to a tibble.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucmVhZF9kZWxpbShcImlyaXMudHh0XCIsIGRlbGltPVwiJFwiKVxuYGBgIn0= -->
-<pre class="r"><code>read_delim(&quot;iris.txt&quot;, delim=&quot;$&quot;)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucmVhZF9kZWxpbShcImlyaXMudHh0XCIsIGRlbGltPVwiJFwiKVxuXG5gYGAifQ== -->
+<pre class="r"><code>read_delim(&quot;iris.txt&quot;, delim=&quot;$&quot;)
+</code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiUGFyc2VkIHdpdGggY29sdW1uIHNwZWNpZmljYXRpb246XG5jb2xzKFxuICBTZXBhbC5MZW5ndGggPSBjb2xfZG91YmxlKCksXG4gIFNlcGFsLldpZHRoID0gY29sX2RvdWJsZSgpLFxuICBQZXRhbC5MZW5ndGggPSBjb2xfZG91YmxlKCksXG4gIFBldGFsLldpZHRoID0gY29sX2RvdWJsZSgpLFxuICBTcGVjaWVzID0gY29sX2NoYXJhY3RlcigpXG4pXG4ifQ== -->
+<pre><code>Parsed with column specification:
+cols(
+  Sepal.Length = col_double(),
+  Sepal.Width = col_double(),
+  Petal.Length = col_double(),
+  Petal.Width = col_double(),
+  Species = col_character()
+)</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBBIHRpYmJsZTogMTUwIHggNVxuICAgU2VwYWwuTGVuZ3RoIFNlcGFsLldpZHRoIFBldGFsLkxlbmd0aCBQZXRhbC5XaWR0aCBTcGVjaWVzXG4gICAgICAgICAgPGRibD4gICAgICAgPGRibD4gICAgICAgIDxkYmw+ICAgICAgIDxkYmw+IDxjaHI+ICBcbiAxICAgICAgICAgIDUuMSAgICAgICAgIDMuNSAgICAgICAgICAxLjQgICAgICAgICAwLjIgc2V0b3NhIFxuIDIgICAgICAgICAgNC45ICAgICAgICAgMyAgICAgICAgICAgIDEuNCAgICAgICAgIDAuMiBzZXRvc2EgXG4gMyAgICAgICAgICA0LjcgICAgICAgICAzLjIgICAgICAgICAgMS4zICAgICAgICAgMC4yIHNldG9zYSBcbiA0ICAgICAgICAgIDQuNiAgICAgICAgIDMuMSAgICAgICAgICAxLjUgICAgICAgICAwLjIgc2V0b3NhIFxuIDUgICAgICAgICAgNSAgICAgICAgICAgMy42ICAgICAgICAgIDEuNCAgICAgICAgIDAuMiBzZXRvc2EgXG4gNiAgICAgICAgICA1LjQgICAgICAgICAzLjkgICAgICAgICAgMS43ICAgICAgICAgMC40IHNldG9zYSBcbiA3ICAgICAgICAgIDQuNiAgICAgICAgIDMuNCAgICAgICAgICAxLjQgICAgICAgICAwLjMgc2V0b3NhIFxuIDggICAgICAgICAgNSAgICAgICAgICAgMy40ICAgICAgICAgIDEuNSAgICAgICAgIDAuMiBzZXRvc2EgXG4gOSAgICAgICAgICA0LjQgICAgICAgICAyLjkgICAgICAgICAgMS40ICAgICAgICAgMC4yIHNldG9zYSBcbjEwICAgICAgICAgIDQuOSAgICAgICAgIDMuMSAgICAgICAgICAxLjUgICAgICAgICAwLjEgc2V0b3NhIFxuIyAuLi4gd2l0aCAxNDAgbW9yZSByb3dzXG4ifQ== -->
+<pre><code># A tibble: 150 x 5
+   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+          &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;  
+ 1          5.1         3.5          1.4         0.2 setosa 
+ 2          4.9         3            1.4         0.2 setosa 
+ 3          4.7         3.2          1.3         0.2 setosa 
+ 4          4.6         3.1          1.5         0.2 setosa 
+ 5          5           3.6          1.4         0.2 setosa 
+ 6          5.4         3.9          1.7         0.4 setosa 
+ 7          4.6         3.4          1.4         0.3 setosa 
+ 8          5           3.4          1.5         0.2 setosa 
+ 9          4.4         2.9          1.4         0.2 setosa 
+10          4.9         3.1          1.5         0.1 setosa 
+# ... with 140 more rows</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <p>Read these three LOTR csv’s, saving them to <code>lotr1</code>, <code>lotr2</code>, and <code>lotr3</code>:</p>
@@ -259,13 +283,19 @@ $(document).ready(function () {
 </ul>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubG90cjEgPC0gcmVhZF9jc3YoXCJodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vamVubnliYy9sb3RyLXRpZHkvbWFzdGVyL2RhdGEvVGhlX0ZlbGxvd3NoaXBfT2ZfVGhlX1JpbmcuY3N2XCIpXG5cbmxvdHIyIDwtIHJlYWRfY3N2KFwiaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2plbm55YmMvbG90ci10aWR5L21hc3Rlci9kYXRhL1RoZV9Ud29fVG93ZXJzLmNzdlwiKVxuXG5sb3RyMyA8LSByZWFkX2NzdihcImh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9qZW5ueWJjL2xvdHItdGlkeS9tYXN0ZXIvZGF0YS9UaGVfUmV0dXJuX09mX1RoZV9LaW5nLmNzdlwiKVxuYGBgIn0= -->
-<pre class="r"><code>lotr1 &lt;- read_csv(&quot;https://raw.githubusercontent.com/jennybc/lotr-tidy/master/data/The_Fellowship_Of_The_Ring.csv&quot;)
-
-lotr2 &lt;- read_csv(&quot;https://raw.githubusercontent.com/jennybc/lotr-tidy/master/data/The_Two_Towers.csv&quot;)
-
-lotr3 &lt;- read_csv(&quot;https://raw.githubusercontent.com/jennybc/lotr-tidy/master/data/The_Return_Of_The_King.csv&quot;)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubG90cjMgPC0gcmVhZF9jc3YoXCJodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vamVubnliYy9sb3RyLXRpZHkvbWFzdGVyL2RhdGEvVGhlX1JldHVybl9PZl9UaGVfS2luZy5jc3ZcIilcblxuYGBgIn0= -->
+<pre class="r"><code>lotr3 &lt;- read_csv(&quot;https://raw.githubusercontent.com/jennybc/lotr-tidy/master/data/The_Return_Of_The_King.csv&quot;)
+</code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiUGFyc2VkIHdpdGggY29sdW1uIHNwZWNpZmljYXRpb246XG5jb2xzKFxuICBGaWxtID0gY29sX2NoYXJhY3RlcigpLFxuICBSYWNlID0gY29sX2NoYXJhY3RlcigpLFxuICBGZW1hbGUgPSBjb2xfaW50ZWdlcigpLFxuICBNYWxlID0gY29sX2ludGVnZXIoKVxuKVxuIn0= -->
+<pre><code>Parsed with column specification:
+cols(
+  Film = col_character(),
+  Race = col_character(),
+  Female = col_integer(),
+  Male = col_integer()
+)</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
@@ -278,6 +308,24 @@ lotr3 &lt;- read_csv(&quot;https://raw.githubusercontent.com/jennybc/lotr-tidy/m
 </ol>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuKGxvdHJfdW50aWR5IDwtIGJpbmRfcm93cyhsb3RyMSwgbG90cjIsIGxvdHIzKSlcblxuYGBgIn0= -->
+<pre class="r"><code>(lotr_untidy &lt;- bind_rows(lotr1, lotr2, lotr3))
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBBIHRpYmJsZTogOSB4IDRcbiAgRmlsbSAgICAgICAgICAgICAgICAgICAgICAgUmFjZSAgIEZlbWFsZSAgTWFsZVxuICA8Y2hyPiAgICAgICAgICAgICAgICAgICAgICA8Y2hyPiAgIDxpbnQ+IDxpbnQ+XG4xIFRoZSBGZWxsb3dzaGlwIE9mIFRoZSBSaW5nIEVsZiAgICAgIDEyMjkgICA5NzFcbjIgVGhlIEZlbGxvd3NoaXAgT2YgVGhlIFJpbmcgSG9iYml0ICAgICAxNCAgMzY0NFxuMyBUaGUgRmVsbG93c2hpcCBPZiBUaGUgUmluZyBNYW4gICAgICAgICAwICAxOTk1XG40IFRoZSBUd28gVG93ZXJzICAgICAgICAgICAgIEVsZiAgICAgICAzMzEgICA1MTNcbjUgVGhlIFR3byBUb3dlcnMgICAgICAgICAgICAgSG9iYml0ICAgICAgMCAgMjQ2M1xuNiBUaGUgVHdvIFRvd2VycyAgICAgICAgICAgICBNYW4gICAgICAgNDAxICAzNTg5XG43IFRoZSBSZXR1cm4gT2YgVGhlIEtpbmcgICAgIEVsZiAgICAgICAxODMgICA1MTBcbjggVGhlIFJldHVybiBPZiBUaGUgS2luZyAgICAgSG9iYml0ICAgICAgMiAgMjY3M1xuOSBUaGUgUmV0dXJuIE9mIFRoZSBLaW5nICAgICBNYW4gICAgICAgMjY4ICAyNDU5XG4ifQ== -->
+<pre><code># A tibble: 9 x 4
+  Film                       Race   Female  Male
+  &lt;chr&gt;                      &lt;chr&gt;   &lt;int&gt; &lt;int&gt;
+1 The Fellowship Of The Ring Elf      1229   971
+2 The Fellowship Of The Ring Hobbit     14  3644
+3 The Fellowship Of The Ring Man         0  1995
+4 The Two Towers             Elf       331   513
+5 The Two Towers             Hobbit      0  2463
+6 The Two Towers             Man       401  3589
+7 The Return Of The King     Elf       183   510
+8 The Return Of The King     Hobbit      2  2673
+9 The Return Of The King     Man       268  2459</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <ol start="2" style="list-style-type: decimal">
@@ -285,6 +333,33 @@ lotr3 &lt;- read_csv(&quot;https://raw.githubusercontent.com/jennybc/lotr-tidy/m
 </ol>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZ2F0aGVyKGxvdHJfdW50aWR5LCBrZXkgPSBcIkdlbmRlclwiLCB2YWx1ZSA9IFwiV29yZFwiLCBGZW1hbGUsIE1hbGUpXG5cbmBgYCJ9 -->
+<pre class="r"><code>gather(lotr_untidy, key = &quot;Gender&quot;, value = &quot;Word&quot;, Female, Male)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBBIHRpYmJsZTogMTggeCA0XG4gICBGaWxtICAgICAgICAgICAgICAgICAgICAgICBSYWNlICAgR2VuZGVyICBXb3JkXG4gICA8Y2hyPiAgICAgICAgICAgICAgICAgICAgICA8Y2hyPiAgPGNocj4gIDxpbnQ+XG4gMSBUaGUgRmVsbG93c2hpcCBPZiBUaGUgUmluZyBFbGYgICAgRmVtYWxlICAxMjI5XG4gMiBUaGUgRmVsbG93c2hpcCBPZiBUaGUgUmluZyBIb2JiaXQgRmVtYWxlICAgIDE0XG4gMyBUaGUgRmVsbG93c2hpcCBPZiBUaGUgUmluZyBNYW4gICAgRmVtYWxlICAgICAwXG4gNCBUaGUgVHdvIFRvd2VycyAgICAgICAgICAgICBFbGYgICAgRmVtYWxlICAgMzMxXG4gNSBUaGUgVHdvIFRvd2VycyAgICAgICAgICAgICBIb2JiaXQgRmVtYWxlICAgICAwXG4gNiBUaGUgVHdvIFRvd2VycyAgICAgICAgICAgICBNYW4gICAgRmVtYWxlICAgNDAxXG4gNyBUaGUgUmV0dXJuIE9mIFRoZSBLaW5nICAgICBFbGYgICAgRmVtYWxlICAgMTgzXG4gOCBUaGUgUmV0dXJuIE9mIFRoZSBLaW5nICAgICBIb2JiaXQgRmVtYWxlICAgICAyXG4gOSBUaGUgUmV0dXJuIE9mIFRoZSBLaW5nICAgICBNYW4gICAgRmVtYWxlICAgMjY4XG4xMCBUaGUgRmVsbG93c2hpcCBPZiBUaGUgUmluZyBFbGYgICAgTWFsZSAgICAgOTcxXG4xMSBUaGUgRmVsbG93c2hpcCBPZiBUaGUgUmluZyBIb2JiaXQgTWFsZSAgICAzNjQ0XG4xMiBUaGUgRmVsbG93c2hpcCBPZiBUaGUgUmluZyBNYW4gICAgTWFsZSAgICAxOTk1XG4xMyBUaGUgVHdvIFRvd2VycyAgICAgICAgICAgICBFbGYgICAgTWFsZSAgICAgNTEzXG4xNCBUaGUgVHdvIFRvd2VycyAgICAgICAgICAgICBIb2JiaXQgTWFsZSAgICAyNDYzXG4xNSBUaGUgVHdvIFRvd2VycyAgICAgICAgICAgICBNYW4gICAgTWFsZSAgICAzNTg5XG4xNiBUaGUgUmV0dXJuIE9mIFRoZSBLaW5nICAgICBFbGYgICAgTWFsZSAgICAgNTEwXG4xNyBUaGUgUmV0dXJuIE9mIFRoZSBLaW5nICAgICBIb2JiaXQgTWFsZSAgICAyNjczXG4xOCBUaGUgUmV0dXJuIE9mIFRoZSBLaW5nICAgICBNYW4gICAgTWFsZSAgICAyNDU5XG4ifQ== -->
+<pre><code># A tibble: 18 x 4
+   Film                       Race   Gender  Word
+   &lt;chr&gt;                      &lt;chr&gt;  &lt;chr&gt;  &lt;int&gt;
+ 1 The Fellowship Of The Ring Elf    Female  1229
+ 2 The Fellowship Of The Ring Hobbit Female    14
+ 3 The Fellowship Of The Ring Man    Female     0
+ 4 The Two Towers             Elf    Female   331
+ 5 The Two Towers             Hobbit Female     0
+ 6 The Two Towers             Man    Female   401
+ 7 The Return Of The King     Elf    Female   183
+ 8 The Return Of The King     Hobbit Female     2
+ 9 The Return Of The King     Man    Female   268
+10 The Fellowship Of The Ring Elf    Male     971
+11 The Fellowship Of The Ring Hobbit Male    3644
+12 The Fellowship Of The Ring Man    Male    1995
+13 The Two Towers             Elf    Male     513
+14 The Two Towers             Hobbit Male    2463
+15 The Two Towers             Man    Male    3589
+16 The Return Of The King     Elf    Male     510
+17 The Return Of The King     Hobbit Male    2673
+18 The Return Of The King     Man    Male    2459</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <ol start="3" style="list-style-type: decimal">
@@ -295,6 +370,24 @@ lotr3 &lt;- read_csv(&quot;https://raw.githubusercontent.com/jennybc/lotr-tidy/m
 </ol>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZG8uY2FsbChiaW5kX3Jvd3MsIGxvdHJfbGlzdClcblxuYGBgIn0= -->
+<pre class="r"><code>do.call(bind_rows, lotr_list)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBBIHRpYmJsZTogOSB4IDRcbiAgRmlsbSAgICAgICAgICAgICAgICAgICAgICAgUmFjZSAgIEZlbWFsZSAgTWFsZVxuICA8Y2hyPiAgICAgICAgICAgICAgICAgICAgICA8Y2hyPiAgIDxpbnQ+IDxpbnQ+XG4xIFRoZSBGZWxsb3dzaGlwIE9mIFRoZSBSaW5nIEVsZiAgICAgIDEyMjkgICA5NzFcbjIgVGhlIEZlbGxvd3NoaXAgT2YgVGhlIFJpbmcgSG9iYml0ICAgICAxNCAgMzY0NFxuMyBUaGUgRmVsbG93c2hpcCBPZiBUaGUgUmluZyBNYW4gICAgICAgICAwICAxOTk1XG40IFRoZSBUd28gVG93ZXJzICAgICAgICAgICAgIEVsZiAgICAgICAzMzEgICA1MTNcbjUgVGhlIFR3byBUb3dlcnMgICAgICAgICAgICAgSG9iYml0ICAgICAgMCAgMjQ2M1xuNiBUaGUgVHdvIFRvd2VycyAgICAgICAgICAgICBNYW4gICAgICAgNDAxICAzNTg5XG43IFRoZSBSZXR1cm4gT2YgVGhlIEtpbmcgICAgIEVsZiAgICAgICAxODMgICA1MTBcbjggVGhlIFJldHVybiBPZiBUaGUgS2luZyAgICAgSG9iYml0ICAgICAgMiAgMjY3M1xuOSBUaGUgUmV0dXJuIE9mIFRoZSBLaW5nICAgICBNYW4gICAgICAgMjY4ICAyNDU5XG4ifQ== -->
+<pre><code># A tibble: 9 x 4
+  Film                       Race   Female  Male
+  &lt;chr&gt;                      &lt;chr&gt;   &lt;int&gt; &lt;int&gt;
+1 The Fellowship Of The Ring Elf      1229   971
+2 The Fellowship Of The Ring Hobbit     14  3644
+3 The Fellowship Of The Ring Man         0  1995
+4 The Two Towers             Elf       331   513
+5 The Two Towers             Hobbit      0  2463
+6 The Two Towers             Man       401  3589
+7 The Return Of The King     Elf       183   510
+8 The Return Of The King     Hobbit      2  2673
+9 The Return Of The King     Man       268  2459</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
@@ -313,11 +406,55 @@ lotr3 &lt;- read_csv(&quot;https://raw.githubusercontent.com/jennybc/lotr-tidy/m
 <p>Get word counts across “Race”. Then try “Gender”.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3ByZWFkKGxvdHJfdGlkeSwga2V5ID0gXCJSYWNlXCIsIHZhbHVlID0gXCJXb3Jkc1wiKVxuXG5gYGAifQ== -->
+<pre class="r"><code>spread(lotr_tidy, key = &quot;Race&quot;, value = &quot;Words&quot;)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBBIHRpYmJsZTogNiB4IDVcbiAgRmlsbSAgICAgICAgICAgICAgICAgICAgICAgR2VuZGVyICAgRWxmIEhvYmJpdCAgIE1hblxuICA8Y2hyPiAgICAgICAgICAgICAgICAgICAgICA8Y2hyPiAgPGludD4gIDxpbnQ+IDxpbnQ+XG4xIFRoZSBGZWxsb3dzaGlwIE9mIFRoZSBSaW5nIEZlbWFsZSAgMTIyOSAgICAgMTQgICAgIDBcbjIgVGhlIEZlbGxvd3NoaXAgT2YgVGhlIFJpbmcgTWFsZSAgICAgOTcxICAgMzY0NCAgMTk5NVxuMyBUaGUgUmV0dXJuIE9mIFRoZSBLaW5nICAgICBGZW1hbGUgICAxODMgICAgICAyICAgMjY4XG40IFRoZSBSZXR1cm4gT2YgVGhlIEtpbmcgICAgIE1hbGUgICAgIDUxMCAgIDI2NzMgIDI0NTlcbjUgVGhlIFR3byBUb3dlcnMgICAgICAgICAgICAgRmVtYWxlICAgMzMxICAgICAgMCAgIDQwMVxuNiBUaGUgVHdvIFRvd2VycyAgICAgICAgICAgICBNYWxlICAgICA1MTMgICAyNDYzICAzNTg5XG4ifQ== -->
+<pre><code># A tibble: 6 x 5
+  Film                       Gender   Elf Hobbit   Man
+  &lt;chr&gt;                      &lt;chr&gt;  &lt;int&gt;  &lt;int&gt; &lt;int&gt;
+1 The Fellowship Of The Ring Female  1229     14     0
+2 The Fellowship Of The Ring Male     971   3644  1995
+3 The Return Of The King     Female   183      2   268
+4 The Return Of The King     Male     510   2673  2459
+5 The Two Towers             Female   331      0   401
+6 The Two Towers             Male     513   2463  3589</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <p>Now try combining race and gender. Use <code>unite()</code> from <code>tidyr</code> instead of <code>paste()</code>.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubG90cl90aWR5ICU+JSBcbiAgbXV0YXRlKHggPSBybm9ybShucm93KGxvdHJfdGlkeSkpKSAlPiUgXG4gIHNwcmVhZChrZXkgPSBcIkdlbmRlclwiLCB2YWx1ZSA9IFwieFwiKVxuXG5gYGAifQ== -->
+<pre class="r"><code>lotr_tidy %&gt;% 
+  mutate(x = rnorm(nrow(lotr_tidy))) %&gt;% 
+  spread(key = &quot;Gender&quot;, value = &quot;x&quot;)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBBIHRpYmJsZTogMTggeCA1XG4gICBGaWxtICAgICAgICAgICAgICAgICAgICAgICBSYWNlICAgV29yZHMgICBGZW1hbGUgICAgTWFsZVxuICAgPGNocj4gICAgICAgICAgICAgICAgICAgICAgPGNocj4gIDxpbnQ+ICAgIDxkYmw+ICAgPGRibD5cbiAxIFRoZSBGZWxsb3dzaGlwIE9mIFRoZSBSaW5nIEVsZiAgICAgIDk3MSAgTkEgICAgICAgLTEuNDUgXG4gMiBUaGUgRmVsbG93c2hpcCBPZiBUaGUgUmluZyBFbGYgICAgIDEyMjkgIC0wLjg2NCAgIE5BICAgIFxuIDMgVGhlIEZlbGxvd3NoaXAgT2YgVGhlIFJpbmcgSG9iYml0ICAgIDE0ICAtMS4xOSAgICBOQSAgICBcbiA0IFRoZSBGZWxsb3dzaGlwIE9mIFRoZSBSaW5nIEhvYmJpdCAgMzY0NCAgTkEgICAgICAgIDAuODQ1XG4gNSBUaGUgRmVsbG93c2hpcCBPZiBUaGUgUmluZyBNYW4gICAgICAgIDAgICAwLjA2NDMgIE5BICAgIFxuIDYgVGhlIEZlbGxvd3NoaXAgT2YgVGhlIFJpbmcgTWFuICAgICAxOTk1ICBOQSAgICAgICAgMS4wOSBcbiA3IFRoZSBSZXR1cm4gT2YgVGhlIEtpbmcgICAgIEVsZiAgICAgIDE4MyAgIDEuOTYgICAgTkEgICAgXG4gOCBUaGUgUmV0dXJuIE9mIFRoZSBLaW5nICAgICBFbGYgICAgICA1MTAgIE5BICAgICAgIC0wLjM4NFxuIDkgVGhlIFJldHVybiBPZiBUaGUgS2luZyAgICAgSG9iYml0ICAgICAyICAgMS44NSAgICBOQSAgICBcbjEwIFRoZSBSZXR1cm4gT2YgVGhlIEtpbmcgICAgIEhvYmJpdCAgMjY3MyAgTkEgICAgICAgLTAuNDYxXG4xMSBUaGUgUmV0dXJuIE9mIFRoZSBLaW5nICAgICBNYW4gICAgICAyNjggIC0wLjc2OCAgIE5BICAgIFxuMTIgVGhlIFJldHVybiBPZiBUaGUgS2luZyAgICAgTWFuICAgICAyNDU5ICBOQSAgICAgICAtMS40MCBcbjEzIFRoZSBUd28gVG93ZXJzICAgICAgICAgICAgIEVsZiAgICAgIDMzMSAgLTAuNDQwICAgTkEgICAgXG4xNCBUaGUgVHdvIFRvd2VycyAgICAgICAgICAgICBFbGYgICAgICA1MTMgIE5BICAgICAgICAxLjg0IFxuMTUgVGhlIFR3byBUb3dlcnMgICAgICAgICAgICAgSG9iYml0ICAgICAwICAtMC45NzEgICBOQSAgICBcbjE2IFRoZSBUd28gVG93ZXJzICAgICAgICAgICAgIEhvYmJpdCAgMjQ2MyAgTkEgICAgICAgIDAuNDMwXG4xNyBUaGUgVHdvIFRvd2VycyAgICAgICAgICAgICBNYW4gICAgICA0MDEgIC0wLjU0MCAgIE5BICAgIFxuMTggVGhlIFR3byBUb3dlcnMgICAgICAgICAgICAgTWFuICAgICAzNTg5ICBOQSAgICAgICAtMC41NjNcbiJ9 -->
+<pre><code># A tibble: 18 x 5
+   Film                       Race   Words   Female    Male
+   &lt;chr&gt;                      &lt;chr&gt;  &lt;int&gt;    &lt;dbl&gt;   &lt;dbl&gt;
+ 1 The Fellowship Of The Ring Elf      971  NA       -1.45 
+ 2 The Fellowship Of The Ring Elf     1229  -0.864   NA    
+ 3 The Fellowship Of The Ring Hobbit    14  -1.19    NA    
+ 4 The Fellowship Of The Ring Hobbit  3644  NA        0.845
+ 5 The Fellowship Of The Ring Man        0   0.0643  NA    
+ 6 The Fellowship Of The Ring Man     1995  NA        1.09 
+ 7 The Return Of The King     Elf      183   1.96    NA    
+ 8 The Return Of The King     Elf      510  NA       -0.384
+ 9 The Return Of The King     Hobbit     2   1.85    NA    
+10 The Return Of The King     Hobbit  2673  NA       -0.461
+11 The Return Of The King     Man      268  -0.768   NA    
+12 The Return Of The King     Man     2459  NA       -1.40 
+13 The Two Towers             Elf      331  -0.440   NA    
+14 The Two Towers             Elf      513  NA        1.84 
+15 The Two Towers             Hobbit     0  -0.971   NA    
+16 The Two Towers             Hobbit  2463  NA        0.430
+17 The Two Towers             Man      401  -0.540   NA    
+18 The Two Towers             Man     3589  NA       -0.563</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
@@ -366,7 +503,7 @@ lotr3 &lt;- read_csv(&quot;https://raw.githubusercontent.com/jennybc/lotr-tidy/m
 <!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiY20wMDkgRXhlcmNpc2VzOiB0aWR5IGRhdGEiCm91dHB1dDogaHRtbF9ub3RlYm9vawplZGl0b3Jfb3B0aW9uczogCiAgY2h1bmtfb3V0cHV0X3R5cGU6IGlubGluZQotLS0KCgpgYGB7cn0Kc3VwcHJlc3NQYWNrYWdlU3RhcnR1cE1lc3NhZ2VzKGxpYnJhcnkodGlkeXZlcnNlKSkKYGBgCgojIyBSZWFkaW5nIGFuZCBXcml0aW5nIERhdGE6IEV4ZXJjaXNlcwoKTWFrZSBhIHRpYmJsZSBvZiBsZXR0ZXJzLCB0aGVpciBvcmRlciBpbiB0aGUgYWxwaGFiZXQsIGFuZCB0aGVuIGEgcGFzdGluZyBvZiB0aGUgdHdvIGNvbHVtbnMgdG9nZXRoZXIuCgpgYGB7cn0KdGliYmxlKGxldCA9IGxldHRlcnMsCiAgICAgICBudW0gPSAxOmxlbmd0aChsZXR0ZXJzKSwKICAgICAgIGNvbWIgPSBwYXN0ZShsZXQsIG51bSkpCmBgYApNYWtlIGEgdGliYmxlIG9mIHRocmVlIG5hbWVzIGFuZCBjb21tdXRlIHRpbWVzLgoKYGBge3J9CnRyaWJibGUoCn5uYW1lLCB+dGltZSwKIkZyYW5rIiwgMTAsCiJMaXNhIiwgNDAsCiJGcmVkIiwgNDApCgpgYGAKCgpXcml0ZSB0aGUgYGlyaXNgIGRhdGEgZnJhbWUgYXMgYSBgY3N2YC4gCgpgYGB7cn0Kd3JpdGVfY3N2KGlyaXMsICJpcmlzLmNzdiIpCmBgYAoKV3JpdGUgdGhlIGBpcmlzYCBkYXRhIGZyYW1lIHRvIGEgZmlsZSBkZWxpbWl0ZWQgYnkgYSBkb2xsYXIgc2lnbi4gCgpgYGB7cn0Kd3JpdGVfZGVsaW0oaXJpcywgImlyaXMudHh0IiwgZGVsaW0gPSAiJCIpCmBgYAoKUmVhZCB0aGUgZG9sbGFyLWRlbGltaXRlZCBgaXJpc2AgZGF0YSB0byBhIHRpYmJsZS4KCmBgYHtyfQpyZWFkX2RlbGltKCJpcmlzLnR4dCIsIGRlbGltPSIkIikKYGBgCgpSZWFkIHRoZXNlIHRocmVlIExPVFIgY3N2J3MsIHNhdmluZyB0aGVtIHRvIGBsb3RyMWAsIGBsb3RyMmAsIGFuZCBgbG90cjNgOgoKLSBodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vamVubnliYy9sb3RyLXRpZHkvbWFzdGVyL2RhdGEvVGhlX0ZlbGxvd3NoaXBfT2ZfVGhlX1JpbmcuY3N2Ci0gaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2plbm55YmMvbG90ci10aWR5L21hc3Rlci9kYXRhL1RoZV9Ud29fVG93ZXJzLmNzdgotIGh0dHBzOi8vZ2l0aHViLmNvbS9qZW5ueWJjL2xvdHItdGlkeS9ibG9iL21hc3Rlci9kYXRhL1RoZV9SZXR1cm5fT2ZfVGhlX0tpbmcuY3N2CgpgYGB7cn0KbG90cjEgPC0gcmVhZF9jc3YoImh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9qZW5ueWJjL2xvdHItdGlkeS9tYXN0ZXIvZGF0YS9UaGVfRmVsbG93c2hpcF9PZl9UaGVfUmluZy5jc3YiKQoKbG90cjIgPC0gcmVhZF9jc3YoImh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9qZW5ueWJjL2xvdHItdGlkeS9tYXN0ZXIvZGF0YS9UaGVfVHdvX1Rvd2Vycy5jc3YiKQoKbG90cjMgPC0gcmVhZF9jc3YoImh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9qZW5ueWJjL2xvdHItdGlkeS9tYXN0ZXIvZGF0YS9UaGVfUmV0dXJuX09mX1RoZV9LaW5nLmNzdiIpCmBgYAoKIyMgYGdhdGhlcigpYAoKKEV4ZXJjaXNlcyBsYXJnZWx5IGJhc2VkIG9mZiBvZiBKZW5ueSBCcnlhbidzIFtnYXRoZXIgdHV0b3JpYWxdKGh0dHBzOi8vZ2l0aHViLmNvbS9qZW5ueWJjL2xvdHItdGlkeS9ibG9iL21hc3Rlci8wMi1nYXRoZXIubWQpKQoKVGhpcyBmdW5jdGlvbiBpcyB1c2VmdWwgZm9yIG1ha2luZyB1bnRpZHkgZGF0YSB0aWR5IChzbyB0aGF0IGNvbXB1dGVycyBjYW4gbW9yZSBlYXNpbHkgY3J1bmNoIHRoZSBudW1iZXJzKS4KCjEuIENvbWJpbmUgdGhlIHRocmVlIExPVFIgdW50aWR5IHRhYmxlcyAoYGxvdHIxYCwgYGxvdHIyYCwgYGxvdHIzYCkgdG8gYSBzaW5nbGUgdW50aWR5IHRhYmxlIGJ5IHN0YWNraW5nIHRoZW0uICAKCmBgYHtyfQoKYGBgCgoyLiBDb252ZXJ0IHRvIHRpZHkuIEFsc28gdHJ5IHRoaXMgYnkgc3BlY2lmeWluZyBjb2x1bW5zIGFzIGEgcmFuZ2UsIGFuZCB3aXRoIHRoZSBgY29udGFpbnMoKWAgZnVuY3Rpb24uCgpgYGB7cn0KCmBgYAoKMy4gVHJ5IGFnYWluIChiaW5kIGFuZCB0aWR5IHRoZSB0aHJlZSB1bnRpZHkgZGF0YSBmcmFtZXMpLCBidXQgd2l0aG91dCBrbm93aW5nIGhvdyBtYW55IHRhYmxlcyB0aGVyZSBhcmUgb3JpZ2luYWxseS4gCiAgICAtIFRoZSBhZGRpdGlvbmFsIHdvcmsgaGVyZSBkb2VzIG5vdCByZXF1aXJlIGFueSBhZGRpdGlvbmFsIHRvb2xzIGZyb20gdGhlIHRpZHl2ZXJzZSwgYnV0IGluc3RlYWQgdXNlcyBhIGBkby5jYWxsYCBmcm9tIGJhc2UgUiAtLSBhIHVzZWZ1bCB0b29sIGluIGRhdGEgYW5hbHlzaXMgd2hlbiB0aGUgbnVtYmVyIG9mICJpdGVtcyIgaXMgdmFyaWFibGUvdW5rbm93biwgb3IgcXVpdGUgbGFyZ2UuIAoKYGBge3J9CgpgYGAKCiMjIGBzcHJlYWQoKWAKCihFeGVyY2lzZXMgbGFyZ2VseSBiYXNlZCBvZmYgb2YgSmVubnkgQnJ5YW4ncyBbc3ByZWFkIHR1dG9yaWFsXShodHRwczovL2dpdGh1Yi5jb20vamVubnliYy9sb3RyLXRpZHkvYmxvYi9tYXN0ZXIvMDMtc3ByZWFkLm1kKSkKClRoaXMgZnVuY3Rpb24gaXMgdXNlZnVsIGZvciBtYWtpbmcgdGlkeSBkYXRhIHVudGlkeSAodG8gYmUgbW9yZSBwbGVhc2luZyB0byB0aGUgZXllKS4KClJlYWQgaW4gdGhlIHRpZHkgTE9UUiBkYXRhIChkZXNwaXRlIGhhdmluZyBqdXN0IG1hZGUgaXQpOgoKYGBge3J9CmxvdHJfdGlkeSA8LSByZWFkX2NzdigiaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2plbm55YmMvbG90ci10aWR5L21hc3Rlci9kYXRhL2xvdHJfdGlkeS5jc3YiKQpgYGAKCkdldCB3b3JkIGNvdW50cyBhY3Jvc3MgIlJhY2UiLiBUaGVuIHRyeSAiR2VuZGVyIi4gCgpgYGB7cn0KCmBgYAoKTm93IHRyeSBjb21iaW5pbmcgcmFjZSBhbmQgZ2VuZGVyLiBVc2UgYHVuaXRlKClgIGZyb20gYHRpZHlyYCBpbnN0ZWFkIG9mIGBwYXN0ZSgpYC4gCgpgYGB7cn0KCmBgYAoKIyMgT3RoZXIgYHRpZHlyYCBnb29kaWVzCgpDaGVjayBvdXQgdGhlIEV4YW1wbGVzIGluIHRoZSBkb2N1bWVudGF0aW9uIHRvIGV4cGxvcmUgdGhlIGZvbGxvd2luZy4KCmBleHBhbmRgIHZzIGBjb21wbGV0ZWAgKHRyaW0gdnMga2VlcCBldmVyeXRoaW5nKS4gVG9nZXRoZXIgd2l0aCBgbmVzdGluZ2AuIENoZWNrIG91dCB0aGUgRXhhbXBsZXMgaW4gdGhlIGBleHBhbmRgIGRvY3VtZW50YXRpb24uCgpgYGB7cn0KCmBgYAoKYHNlcGFyYXRlX3Jvd3NgOiB1c2VmdWwgd2hlbiB5b3UgaGF2ZSBhIHZhcmlhYmxlIG51bWJlciBvZiBlbnRyaWVzIGluIGEgImNlbGwiLgoKYGBge3J9CgpgYGAKCmB1bml0ZWAgYW5kIGBzZXBhcmF0ZWAuCgpgYGB7cn0KCmBgYAoKYHVuY291bnRgIChhcyB0aGUgb3Bwb3NpdGUgb2YgYGRwbHlyOjpjb3VudCgpYCkKCmBgYHtyfQoKYGBgCgoKYGRyb3BfbmFgIGFuZCBgcmVwbGFjZV9uYWAKCmBgYHtyfQoKYGBgCgpgZmlsbGAKCmBgYHtyfQoKYGBgCgoKYGZ1bGxfc2VxYAoKYGBge3J9CgpgYGAKCgojIyBUaW1lIHJlbWFpbmluZz8KClRpbWUgcGVybWl0dGluZywgZG8gW3RoaXMgZXhlcmNpc2VdKGh0dHBzOi8vZ2l0aHViLmNvbS9qZW5ueWJjL2xvdHItdGlkeS9ibG9iL21hc3Rlci8wMi1nYXRoZXIubWQjZXhlcmNpc2VzKSB0byBwcmFjdGljZSB0aWR5aW5nIGRhdGEuIA==</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiY20wMDkgRXhlcmNpc2VzOiB0aWR5IGRhdGEiCm91dHB1dDogaHRtbF9ub3RlYm9vawplZGl0b3Jfb3B0aW9uczogCiAgY2h1bmtfb3V0cHV0X3R5cGU6IGlubGluZQotLS0KCgpgYGB7cn0Kc3VwcHJlc3NQYWNrYWdlU3RhcnR1cE1lc3NhZ2VzKGxpYnJhcnkodGlkeXZlcnNlKSkKYGBgCgojIyBSZWFkaW5nIGFuZCBXcml0aW5nIERhdGE6IEV4ZXJjaXNlcwoKTWFrZSBhIHRpYmJsZSBvZiBsZXR0ZXJzLCB0aGVpciBvcmRlciBpbiB0aGUgYWxwaGFiZXQsIGFuZCB0aGVuIGEgcGFzdGluZyBvZiB0aGUgdHdvIGNvbHVtbnMgdG9nZXRoZXIuCgpgYGB7cn0KdGliYmxlKGxldCA9IGxldHRlcnMsCiAgICAgICBudW0gPSAxOmxlbmd0aChsZXR0ZXJzKSwKICAgICAgIGNvbWIgPSBwYXN0ZShsZXQsIG51bSkpCmBgYApNYWtlIGEgdGliYmxlIG9mIHRocmVlIG5hbWVzIGFuZCBjb21tdXRlIHRpbWVzLgoKYGBge3J9CnRyaWJibGUoCn5uYW1lLCB+dGltZSwKIkZyYW5rIiwgMTAsCiJMaXNhIiwgNDAsCiJGcmVkIiwgNDApCgpgYGAKCgpXcml0ZSB0aGUgYGlyaXNgIGRhdGEgZnJhbWUgYXMgYSBgY3N2YC4gCgpgYGB7cn0Kd3JpdGVfY3N2KGlyaXMsICJpcmlzLmNzdiIpCmBgYAoKV3JpdGUgdGhlIGBpcmlzYCBkYXRhIGZyYW1lIHRvIGEgZmlsZSBkZWxpbWl0ZWQgYnkgYSBkb2xsYXIgc2lnbi4gCgpgYGB7cn0Kd3JpdGVfZGVsaW0oaXJpcywgImlyaXMudHh0IiwgZGVsaW0gPSAiJCIpCmBgYAoKUmVhZCB0aGUgZG9sbGFyLWRlbGltaXRlZCBgaXJpc2AgZGF0YSB0byBhIHRpYmJsZS4KCmBgYHtyfQpyZWFkX2RlbGltKCJpcmlzLnR4dCIsIGRlbGltPSIkIikKYGBgCgpSZWFkIHRoZXNlIHRocmVlIExPVFIgY3N2J3MsIHNhdmluZyB0aGVtIHRvIGBsb3RyMWAsIGBsb3RyMmAsIGFuZCBgbG90cjNgOgoKLSBodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vamVubnliYy9sb3RyLXRpZHkvbWFzdGVyL2RhdGEvVGhlX0ZlbGxvd3NoaXBfT2ZfVGhlX1JpbmcuY3N2Ci0gaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2plbm55YmMvbG90ci10aWR5L21hc3Rlci9kYXRhL1RoZV9Ud29fVG93ZXJzLmNzdgotIGh0dHBzOi8vZ2l0aHViLmNvbS9qZW5ueWJjL2xvdHItdGlkeS9ibG9iL21hc3Rlci9kYXRhL1RoZV9SZXR1cm5fT2ZfVGhlX0tpbmcuY3N2CgpgYGB7cn0KbG90cjEgPC0gcmVhZF9jc3YoImh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9qZW5ueWJjL2xvdHItdGlkeS9tYXN0ZXIvZGF0YS9UaGVfRmVsbG93c2hpcF9PZl9UaGVfUmluZy5jc3YiKQoKbG90cjIgPC0gcmVhZF9jc3YoImh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9qZW5ueWJjL2xvdHItdGlkeS9tYXN0ZXIvZGF0YS9UaGVfVHdvX1Rvd2Vycy5jc3YiKQoKbG90cjMgPC0gcmVhZF9jc3YoImh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9qZW5ueWJjL2xvdHItdGlkeS9tYXN0ZXIvZGF0YS9UaGVfUmV0dXJuX09mX1RoZV9LaW5nLmNzdiIpCmBgYAoKIyMgYGdhdGhlcigpYAoKKEV4ZXJjaXNlcyBsYXJnZWx5IGJhc2VkIG9mZiBvZiBKZW5ueSBCcnlhbidzIFtnYXRoZXIgdHV0b3JpYWxdKGh0dHBzOi8vZ2l0aHViLmNvbS9qZW5ueWJjL2xvdHItdGlkeS9ibG9iL21hc3Rlci8wMi1nYXRoZXIubWQpKQoKVGhpcyBmdW5jdGlvbiBpcyB1c2VmdWwgZm9yIG1ha2luZyB1bnRpZHkgZGF0YSB0aWR5IChzbyB0aGF0IGNvbXB1dGVycyBjYW4gbW9yZSBlYXNpbHkgY3J1bmNoIHRoZSBudW1iZXJzKS4KCjEuIENvbWJpbmUgdGhlIHRocmVlIExPVFIgdW50aWR5IHRhYmxlcyAoYGxvdHIxYCwgYGxvdHIyYCwgYGxvdHIzYCkgdG8gYSBzaW5nbGUgdW50aWR5IHRhYmxlIGJ5IHN0YWNraW5nIHRoZW0uICAKCmBgYHtyfQoobG90cl91bnRpZHkgPC0gYmluZF9yb3dzKGxvdHIxLCBsb3RyMiwgbG90cjMpKQpgYGAKCjIuIENvbnZlcnQgdG8gdGlkeS4gQWxzbyB0cnkgdGhpcyBieSBzcGVjaWZ5aW5nIGNvbHVtbnMgYXMgYSByYW5nZSwgYW5kIHdpdGggdGhlIGBjb250YWlucygpYCBmdW5jdGlvbi4KCmBgYHtyfQpnYXRoZXIobG90cl91bnRpZHksIGtleSA9ICJHZW5kZXIiLCB2YWx1ZSA9ICJXb3JkIiwgRmVtYWxlLCBNYWxlKQpnYXRoZXIobG90cl91bnRpZHksIGtleSA9ICJHZW5kZXIiLCB2YWx1ZSA9ICJXb3JkIiwgRmVtYWxlOiBNYWxlKQpnYXRoZXIobG90cl91bnRpZHksIGtleSA9ICJHZW5kZXIiLCB2YWx1ZSA9ICJXb3JkIiwgY29udGFpbnMoImFsZSIpKQoKYGBgCgozLiBUcnkgYWdhaW4gKGJpbmQgYW5kIHRpZHkgdGhlIHRocmVlIHVudGlkeSBkYXRhIGZyYW1lcyksIGJ1dCB3aXRob3V0IGtub3dpbmcgaG93IG1hbnkgdGFibGVzIHRoZXJlIGFyZSBvcmlnaW5hbGx5LiAKICAgIC0gVGhlIGFkZGl0aW9uYWwgd29yayBoZXJlIGRvZXMgbm90IHJlcXVpcmUgYW55IGFkZGl0aW9uYWwgdG9vbHMgZnJvbSB0aGUgdGlkeXZlcnNlLCBidXQgaW5zdGVhZCB1c2VzIGEgYGRvLmNhbGxgIGZyb20gYmFzZSBSIC0tIGEgdXNlZnVsIHRvb2wgaW4gZGF0YSBhbmFseXNpcyB3aGVuIHRoZSBudW1iZXIgb2YgIml0ZW1zIiBpcyB2YXJpYWJsZS91bmtub3duLCBvciBxdWl0ZSBsYXJnZS4gCgpgYGB7cn0KbG90cl9saXN0IDwtIGxpc3QobG90cjEsIGxvdHIyLCBsb3RyMykKbG90cl9saXN0CmRvLmNhbGwoYmluZF9yb3dzLCBsb3RyX2xpc3QpCmBgYAoKIyMgYHNwcmVhZCgpYAoKKEV4ZXJjaXNlcyBsYXJnZWx5IGJhc2VkIG9mZiBvZiBKZW5ueSBCcnlhbidzIFtzcHJlYWQgdHV0b3JpYWxdKGh0dHBzOi8vZ2l0aHViLmNvbS9qZW5ueWJjL2xvdHItdGlkeS9ibG9iL21hc3Rlci8wMy1zcHJlYWQubWQpKQoKVGhpcyBmdW5jdGlvbiBpcyB1c2VmdWwgZm9yIG1ha2luZyB0aWR5IGRhdGEgdW50aWR5ICh0byBiZSBtb3JlIHBsZWFzaW5nIHRvIHRoZSBleWUpLgoKUmVhZCBpbiB0aGUgdGlkeSBMT1RSIGRhdGEgKGRlc3BpdGUgaGF2aW5nIGp1c3QgbWFkZSBpdCk6CgpgYGB7cn0KbG90cl90aWR5IDwtIHJlYWRfY3N2KCJodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vamVubnliYy9sb3RyLXRpZHkvbWFzdGVyL2RhdGEvbG90cl90aWR5LmNzdiIpCmBgYAoKR2V0IHdvcmQgY291bnRzIGFjcm9zcyAiUmFjZSIuIFRoZW4gdHJ5ICJHZW5kZXIiLiAKCmBgYHtyfQpzcHJlYWQobG90cl90aWR5LCBrZXkgPSAiUmFjZSIsIHZhbHVlID0gIldvcmRzIikKCmBgYAoKTm93IHRyeSBjb21iaW5pbmcgcmFjZSBhbmQgZ2VuZGVyLiBVc2UgYHVuaXRlKClgIGZyb20gYHRpZHlyYCBpbnN0ZWFkIG9mIGBwYXN0ZSgpYC4gCgpgYGB7cn0KbG90cl90aWR5ICU+JSAKICB1bml0ZShSYWNlX0dlbmRlciwgUmFjZSwgR2VuZGVyKSAlPiUgCiAgc3ByZWFkKCJSYWNlX0dlbmRlciIsIHZhbHVlID0gIldvcmRzIikgCgpsb3RyX3RpZHkgJT4lIAogIG11dGF0ZSh4ID0gcm5vcm0obnJvdyhsb3RyX3RpZHkpKSkgJT4lIAogIHNwcmVhZChrZXkgPSAiR2VuZGVyIiwgdmFsdWUgPSAieCIpCmBgYAoKIyMgT3RoZXIgYHRpZHlyYCBnb29kaWVzCgpDaGVjayBvdXQgdGhlIEV4YW1wbGVzIGluIHRoZSBkb2N1bWVudGF0aW9uIHRvIGV4cGxvcmUgdGhlIGZvbGxvd2luZy4KCmBleHBhbmRgIHZzIGBjb21wbGV0ZWAgKHRyaW0gdnMga2VlcCBldmVyeXRoaW5nKS4gVG9nZXRoZXIgd2l0aCBgbmVzdGluZ2AuIENoZWNrIG91dCB0aGUgRXhhbXBsZXMgaW4gdGhlIGBleHBhbmRgIGRvY3VtZW50YXRpb24uCgpgYGB7cn0KCmBgYAoKYHNlcGFyYXRlX3Jvd3NgOiB1c2VmdWwgd2hlbiB5b3UgaGF2ZSBhIHZhcmlhYmxlIG51bWJlciBvZiBlbnRyaWVzIGluIGEgImNlbGwiLgoKYGBge3J9CgpgYGAKCmB1bml0ZWAgYW5kIGBzZXBhcmF0ZWAuCgpgYGB7cn0KCmBgYAoKYHVuY291bnRgIChhcyB0aGUgb3Bwb3NpdGUgb2YgYGRwbHlyOjpjb3VudCgpYCkKCmBgYHtyfQoKYGBgCgoKYGRyb3BfbmFgIGFuZCBgcmVwbGFjZV9uYWAKCmBgYHtyfQoKYGBgCgpgZmlsbGAKCmBgYHtyfQoKYGBgCgoKYGZ1bGxfc2VxYAoKYGBge3J9CgpgYGAKCgojIyBUaW1lIHJlbWFpbmluZz8KClRpbWUgcGVybWl0dGluZywgZG8gW3RoaXMgZXhlcmNpc2VdKGh0dHBzOi8vZ2l0aHViLmNvbS9qZW5ueWJjL2xvdHItdGlkeS9ibG9iL21hc3Rlci8wMi1nYXRoZXIubWQjZXhlcmNpc2VzKSB0byBwcmFjdGljZSB0aWR5aW5nIGRhdGEuIA==</div>
 
 
 
