@@ -464,23 +464,20 @@ cols(
 <p><code>expand</code> vs <code>complete</code> (trim vs keep everything). Together with <code>nesting</code>. Check out the Examples in the <code>expand</code> documentation.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZXhwZXJpbWVudCAlPiUgIGV4cGFuZChuZXN0aW5nKG5hbWUsdHJ0KSwgcmVwKVxuXG5gYGAifQ== -->
-<pre class="r"><code>experiment %&gt;%  expand(nesting(name,trt), rep)
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZXhwYW5kKG10Y2FycywgdnMsIGN5bClcblxuYGBgIn0= -->
+<pre class="r"><code>expand(mtcars, vs, cyl)
 </code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiIyBBIHRpYmJsZTogOSB4IDNcbiAgbmFtZSAgIHRydCAgICAgcmVwXG4gIDxjaHI+ICA8Y2hyPiA8ZGJsPlxuMSBBbGV4ICAgYSAgICAgICAgIDFcbjIgQWxleCAgIGEgICAgICAgICAyXG4zIEFsZXggICBhICAgICAgICAgM1xuNCBSb2JlcnQgYiAgICAgICAgIDFcbjUgUm9iZXJ0IGIgICAgICAgICAyXG42IFJvYmVydCBiICAgICAgICAgM1xuNyBTYW0gICAgYSAgICAgICAgIDFcbjggU2FtICAgIGEgICAgICAgICAyXG45IFNhbSAgICBhICAgICAgICAgM1xuIn0= -->
-<pre><code># A tibble: 9 x 3
-  name   trt     rep
-  &lt;chr&gt;  &lt;chr&gt; &lt;dbl&gt;
-1 Alex   a         1
-2 Alex   a         2
-3 Alex   a         3
-4 Robert b         1
-5 Robert b         2
-6 Robert b         3
-7 Sam    a         1
-8 Sam    a         2
-9 Sam    a         3</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiIyBBIHRpYmJsZTogNiB4IDJcbiAgICAgdnMgICBjeWxcbiAgPGRibD4gPGRibD5cbjEgICAgIDAgICAgIDRcbjIgICAgIDAgICAgIDZcbjMgICAgIDAgICAgIDhcbjQgICAgIDEgICAgIDRcbjUgICAgIDEgICAgIDZcbjYgICAgIDEgICAgIDhcbiJ9 -->
+<pre><code># A tibble: 6 x 2
+     vs   cyl
+  &lt;dbl&gt; &lt;dbl&gt;
+1     0     4
+2     0     6
+3     0     8
+4     1     4
+5     1     6
+6     1     8</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
