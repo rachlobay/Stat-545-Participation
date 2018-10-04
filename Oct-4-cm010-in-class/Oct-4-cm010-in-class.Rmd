@@ -164,13 +164,15 @@ left_join(flights2, airlines)
 ### 4. Add `weather` information to the `flights2` dataset by matching "year" and "time\_hour" variables.
 
 ```{r}
-
+flights2 %>% 
+  left_join(weather, by = c("year","time_hour"))
 ```
 
 ### 5. Add `weather` information to the `flights2` dataset by matching only "time\_hour" variable
 
 ```{r}
-
+flights2 %>% 
+  left_join(weather, by = c("time_hour"))
 ```
 
 
