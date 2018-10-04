@@ -184,9 +184,48 @@ $(document).ready(function () {
 <h1>cm008 Exercises</h1>
 <div id="install-nycflights13-package" class="section level2">
 <h2>Install <code>nycflights13</code> package</h2>
-<pre class="r"><code>install.packages(&quot;nycflights13&quot;)</code></pre>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaW5zdGFsbC5wYWNrYWdlcyhcIm55Y2ZsaWdodHMxM1wiKVxuXG5gYGAifQ== -->
+<pre class="r"><code>install.packages(&quot;nycflights13&quot;)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoidHJ5aW5nIFVSTCAnaHR0cHM6Ly9jcmFuLnJzdHVkaW8uY29tL2Jpbi9tYWNvc3gvZWwtY2FwaXRhbi9jb250cmliLzMuNS9ueWNmbGlnaHRzMTNfMS4wLjAudGd6J1xuQ29udGVudCB0eXBlICdhcHBsaWNhdGlvbi94LWd6aXAnIGxlbmd0aCA3MTE1MjU3IGJ5dGVzICg2LjggTUIpXG49PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PVxuZG93bmxvYWRlZCA2LjggTUJcbiJ9 -->
+<pre><code>trying URL 'https://cran.rstudio.com/bin/macosx/el-capitan/contrib/3.5/nycflights13_1.0.0.tgz'
+Content type 'application/x-gzip' length 7115257 bytes (6.8 MB)
+==================================================
+downloaded 6.8 MB</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5UaGUgZG93bmxvYWRlZCBiaW5hcnkgcGFja2FnZXMgYXJlIGluXG5cdC92YXIvZm9sZGVycy9ncS9zOGgwcjF5OTd5emJmOWx0NHRxeGMxeWMwMDAwZ24vVC8vUnRtcHZvQ05zQS9kb3dubG9hZGVkX3BhY2thZ2VzXG4ifQ== -->
+<pre><code>
+The downloaded binary packages are in
+    /var/folders/gq/s8h0r1y97yzbf9lt4tqxc1yc0000gn/T//RtmpvoCNsA/downloaded_packages</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgIHJcbmBgYCJ9 -->
+<p><code>r</code> r</p>
+<pre><code>
+&lt;!-- rnb-source-end --&gt;
+
+&lt;!-- rnb-output-begin eyJkYXRhIjoiRXJyb3I6IGF0dGVtcHQgdG8gdXNlIHplcm8tbGVuZ3RoIHZhcmlhYmxlIG5hbWVcbiJ9 --&gt;
+</code></pre>
+<p>Error: attempt to use zero-length variable name ```</p>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VwcHJlc3NQYWNrYWdlU3RhcnR1cE1lc3NhZ2VzKGxpYnJhcnkodGlkeXZlcnNlKSlcbnN1cHByZXNzUGFja2FnZVN0YXJ0dXBNZXNzYWdlcyhsaWJyYXJ5KG55Y2ZsaWdodHMxMykpXG5gYGBcbmBgYCJ9 -->
 <pre class="r"><code>suppressPackageStartupMessages(library(tidyverse))
 suppressPackageStartupMessages(library(nycflights13))</code></pre>
+<pre><code>
+&lt;!-- rnb-source-end --&gt;
+
+&lt;!-- rnb-output-begin eyJkYXRhIjoiRXJyb3I6IGF0dGVtcHQgdG8gdXNlIHplcm8tbGVuZ3RoIHZhcmlhYmxlIG5hbWVcbiJ9 --&gt;
+</code></pre>
+<p>Error: attempt to use zero-length variable name ```</p>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 </div>
 <div id="types-of-mutating-join" class="section level2">
 <h2>Types of mutating join</h2>
@@ -195,14 +234,44 @@ suppressPackageStartupMessages(library(nycflights13))</code></pre>
 </div>
 <div id="create-two-tibbles-named-a-and-b" class="section level3">
 <h3>create two tibbles named <code>a</code> and <code>b</code></h3>
-<pre class="r"><code>(a &lt;- tibble(x1 = LETTERS[1:3], x2 = 1:3))</code></pre>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuKGEgPC0gdGliYmxlKHgxID0gTEVUVEVSU1sxOjNdLCB4MiA9IDE6MykpXG5cbmBgYCJ9 -->
+<pre class="r"><code>(a &lt;- tibble(x1 = LETTERS[1:3], x2 = 1:3))
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBBIHRpYmJsZTogMyB4IDJcbiAgeDEgICAgICAgeDJcbiAgPGNocj4gPGludD5cbjEgQSAgICAgICAgIDFcbjIgQiAgICAgICAgIDJcbjMgQyAgICAgICAgIDNcbiJ9 -->
+<pre><code># A tibble: 3 x 2
+  x1       x2
+  &lt;chr&gt; &lt;int&gt;
+1 A         1
+2 B         2
+3 C         3</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 <pre><code>## # A tibble: 3 x 2
 ##   x1       x2
 ##   &lt;chr&gt; &lt;int&gt;
 ## 1 A         1
 ## 2 B         2
 ## 3 C         3</code></pre>
-<pre class="r"><code>(b &lt;- tibble(x1 = LETTERS[c(1,2,4)], x3 = c(&quot;T&quot;, &quot;F&quot;, &quot;T&quot;)))</code></pre>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuKGIgPC0gdGliYmxlKHgxID0gTEVUVEVSU1tjKDEsMiw0KV0sIHgzID0gYyhcIlRcIiwgXCJGXCIsIFwiVFwiKSkpXG5cbmBgYCJ9 -->
+<pre class="r"><code>(b &lt;- tibble(x1 = LETTERS[c(1,2,4)], x3 = c(&quot;T&quot;, &quot;F&quot;, &quot;T&quot;)))
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBBIHRpYmJsZTogMyB4IDJcbiAgeDEgICAgeDMgICBcbiAgPGNocj4gPGNocj5cbjEgQSAgICAgVCAgICBcbjIgQiAgICAgRiAgICBcbjMgRCAgICAgVCAgICBcbiJ9 -->
+<pre><code># A tibble: 3 x 2
+  x1    x3   
+  &lt;chr&gt; &lt;chr&gt;
+1 A     T    
+2 B     F    
+3 D     T    </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 <pre><code>## # A tibble: 3 x 2
 ##   x1    x3   
 ##   &lt;chr&gt; &lt;chr&gt;
@@ -212,26 +281,143 @@ suppressPackageStartupMessages(library(nycflights13))</code></pre>
 </div>
 <div id="left_join-join-matching-rows-from-b-to-a-by-matching-x1-variable" class="section level3">
 <h3>left_join: Join matching rows from <code>b</code> to <code>a</code> by matching “x1” variable</h3>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGVmdF9qb2luKGEsIGIsIGJ5PVwieDFcIilcblxuYGBgIn0= -->
+<pre class="r"><code>left_join(a, b, by=&quot;x1&quot;)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBBIHRpYmJsZTogMyB4IDNcbiAgeDEgICAgICAgeDIgeDMgICBcbiAgPGNocj4gPGludD4gPGNocj5cbjEgQSAgICAgICAgIDEgVCAgICBcbjIgQiAgICAgICAgIDIgRiAgICBcbjMgQyAgICAgICAgIDMgPE5BPiBcbiJ9 -->
+<pre><code># A tibble: 3 x 3
+  x1       x2 x3   
+  &lt;chr&gt; &lt;int&gt; &lt;chr&gt;
+1 A         1 T    
+2 B         2 F    
+3 C         3 &lt;NA&gt; </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 </div>
 <div id="right_join-join-matching-rows-from-a-to-b-by-matching-x1-variable." class="section level3">
 <h3>right_join: Join matching rows from <code>a</code> to <code>b</code> by matching “x1” variable.</h3>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucmlnaHRfam9pbihhLCBiLCBieT1cIngxXCIpXG5cbmBgYCJ9 -->
+<pre class="r"><code>right_join(a, b, by=&quot;x1&quot;)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBBIHRpYmJsZTogMyB4IDNcbiAgeDEgICAgICAgeDIgeDMgICBcbiAgPGNocj4gPGludD4gPGNocj5cbjEgQSAgICAgICAgIDEgVCAgICBcbjIgQiAgICAgICAgIDIgRiAgICBcbjMgRCAgICAgICAgTkEgVCAgICBcbiJ9 -->
+<pre><code># A tibble: 3 x 3
+  x1       x2 x3   
+  &lt;chr&gt; &lt;int&gt; &lt;chr&gt;
+1 A         1 T    
+2 B         2 F    
+3 D        NA T    </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 </div>
 <div id="inner_join-join-data.-retain-only-rows-in-both-sets-a-to-b-by-matching-x1-variable." class="section level3">
 <h3>inner_join: Join data. Retain only rows in both sets <code>a</code> to <code>b</code> by matching “x1” variable.</h3>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaW5uZXJfam9pbihhLCBiLCBieSA9IFwieDFcIilcblxuYGBgIn0= -->
+<pre class="r"><code>inner_join(a, b, by = &quot;x1&quot;)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBBIHRpYmJsZTogMiB4IDNcbiAgeDEgICAgICAgeDIgeDMgICBcbiAgPGNocj4gPGludD4gPGNocj5cbjEgQSAgICAgICAgIDEgVCAgICBcbjIgQiAgICAgICAgIDIgRiAgICBcbiJ9 -->
+<pre><code># A tibble: 2 x 3
+  x1       x2 x3   
+  &lt;chr&gt; &lt;int&gt; &lt;chr&gt;
+1 A         1 T    
+2 B         2 F    </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 </div>
 <div id="full_join-join-data.-retain-all-values-all-rows-of-a-to-b-by-matching-x1" class="section level3">
 <h3>full_join: Join data. Retain all values, all rows of <code>a</code> to <code>b</code> by matching “x1”</h3>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZnVsbF9qb2luKGEsIGIsIGJ5ID0gXCJ4MVwiKVxuXG5gYGAifQ== -->
+<pre class="r"><code>full_join(a, b, by = &quot;x1&quot;)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBBIHRpYmJsZTogNCB4IDNcbiAgeDEgICAgICAgeDIgeDMgICBcbiAgPGNocj4gPGludD4gPGNocj5cbjEgQSAgICAgICAgIDEgVCAgICBcbjIgQiAgICAgICAgIDIgRiAgICBcbjMgQyAgICAgICAgIDMgPE5BPiBcbjQgRCAgICAgICAgTkEgVCAgICBcbiJ9 -->
+<pre><code># A tibble: 4 x 3
+  x1       x2 x3   
+  &lt;chr&gt; &lt;int&gt; &lt;chr&gt;
+1 A         1 T    
+2 B         2 F    
+3 C         3 &lt;NA&gt; 
+4 D        NA T    </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 </div>
 <div id="what-happen-if-we-do-not-specify-by-option" class="section level3">
 <h3>what happen if we do not specify <code>by</code> option?</h3>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZnVsbF9qb2luKGEsIGIpXG5cbmBgYCJ9 -->
+<pre class="r"><code>full_join(a, b)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiSm9pbmluZywgYnkgPSBcIngxXCJcbiJ9 -->
+<pre><code>Joining, by = &quot;x1&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBBIHRpYmJsZTogNCB4IDNcbiAgeDEgICAgICAgeDIgeDMgICBcbiAgPGNocj4gPGludD4gPGNocj5cbjEgQSAgICAgICAgIDEgVCAgICBcbjIgQiAgICAgICAgIDIgRiAgICBcbjMgQyAgICAgICAgIDMgPE5BPiBcbjQgRCAgICAgICAgTkEgVCAgICBcbiJ9 -->
+<pre><code># A tibble: 4 x 3
+  x1       x2 x3   
+  &lt;chr&gt; &lt;int&gt; &lt;chr&gt;
+1 A         1 T    
+2 B         2 F    
+3 C         3 &lt;NA&gt; 
+4 D        NA T    </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 </div>
 <div id="what-happen-if-we-join-two-different-variables-e.g.-x1-to-x3-from-two-tibbles-a-to-b" class="section level3">
 <h3>what happen if we join two different variables (e.g., “x1” to “x3”) from two tibbles <code>a</code> to <code>b</code>?</h3>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGVmdF9qb2luKGEsIGIsIGJ5ID0gYyhcIngxXCIgPSBcIngzXCIpKVxuXG5gYGAifQ== -->
+<pre class="r"><code>left_join(a, b, by = c(&quot;x1&quot; = &quot;x3&quot;))
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBBIHRpYmJsZTogMyB4IDNcbiAgeDEgICAgICAgeDIgeDEueSBcbiAgPGNocj4gPGludD4gPGNocj5cbjEgQSAgICAgICAgIDEgPE5BPiBcbjIgQiAgICAgICAgIDIgPE5BPiBcbjMgQyAgICAgICAgIDMgPE5BPiBcbiJ9 -->
+<pre><code># A tibble: 3 x 3
+  x1       x2 x1.y 
+  &lt;chr&gt; &lt;int&gt; &lt;chr&gt;
+1 A         1 &lt;NA&gt; 
+2 B         2 &lt;NA&gt; 
+3 C         3 &lt;NA&gt; </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 </div>
 <div id="what-happen-if-two-columns-of-a-and-c-datasets-have-the-identical-colnames" class="section level3">
 <h3>what happen if two columns of <code>a</code> and <code>c</code> datasets have the identical colnames?</h3>
-<pre class="r"><code># make data frame c and use inner_join()
-(c &lt;- tibble(x1 = c(LETTERS[1:2],&quot;x&quot;), x2 = c(1,4,5)))</code></pre>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGVmdF9qb2luKGEsIGMpXG5cbmBgYCJ9 -->
+<pre class="r"><code>left_join(a, c)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiSm9pbmluZywgYnkgPSBjKFwieDFcIiwgXCJ4MlwiKVxuIn0= -->
+<pre><code>Joining, by = c(&quot;x1&quot;, &quot;x2&quot;)</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBBIHRpYmJsZTogMyB4IDJcbiAgeDEgICAgICAgeDJcbiAgPGNocj4gPGRibD5cbjEgQSAgICAgICAgIDFcbjIgQiAgICAgICAgIDJcbjMgQyAgICAgICAgIDNcbiJ9 -->
+<pre><code># A tibble: 3 x 2
+  x1       x2
+  &lt;chr&gt; &lt;dbl&gt;
+1 A         1
+2 B         2
+3 C         3</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 <pre><code>## # A tibble: 3 x 2
 ##   x1       x2
 ##   &lt;chr&gt; &lt;dbl&gt;
@@ -245,36 +431,93 @@ suppressPackageStartupMessages(library(nycflights13))</code></pre>
 <p><code>nycflights13</code> dataset has several tibbles e.g., <code>flights</code>, <code>airports</code>, <code>planes</code>, <code>weather</code>.</p>
 <div id="explore-nycflights13-dataset" class="section level3">
 <h3>1. Explore <code>nycflights13</code> dataset</h3>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI2NoZWNrIHRoZSB0aWJibGVzIGluY2x1ZGVkIGluIGBueWNmbGlnaHRzMTNgIHBhY2thZ2VcbmNsYXNzKGZsaWdodHMpXG5gYGAifQ== -->
 <pre class="r"><code>#check the tibbles included in `nycflights13` package
 class(flights)</code></pre>
-<pre><code>## [1] &quot;tbl_df&quot;     &quot;tbl&quot;        &quot;data.frame&quot;</code></pre>
-<pre class="r"><code>colnames(flights)</code></pre>
-<pre><code>##  [1] &quot;year&quot;           &quot;month&quot;          &quot;day&quot;            &quot;dep_time&quot;      
-##  [5] &quot;sched_dep_time&quot; &quot;dep_delay&quot;      &quot;arr_time&quot;       &quot;sched_arr_time&quot;
-##  [9] &quot;arr_delay&quot;      &quot;carrier&quot;        &quot;flight&quot;         &quot;tailnum&quot;       
-## [13] &quot;origin&quot;         &quot;dest&quot;           &quot;air_time&quot;       &quot;distance&quot;      
-## [17] &quot;hour&quot;           &quot;minute&quot;         &quot;time_hour&quot;</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY29sbmFtZXMoZmxpZ2h0cylcblxuYGBgIn0= -->
+<pre class="r"><code>colnames(flights)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>colnames(flights)</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY29sbmFtZXMoYWlybGluZXMpXG5gYGAifQ== -->
 <pre class="r"><code>colnames(airlines)</code></pre>
-<pre><code>## [1] &quot;carrier&quot; &quot;name&quot;</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY29sbmFtZXMod2VhdGhlcilcbmBgYCJ9 -->
 <pre class="r"><code>colnames(weather)</code></pre>
-<pre><code>##  [1] &quot;origin&quot;     &quot;year&quot;       &quot;month&quot;      &quot;day&quot;        &quot;hour&quot;      
-##  [6] &quot;temp&quot;       &quot;dewp&quot;       &quot;humid&quot;      &quot;wind_dir&quot;   &quot;wind_speed&quot;
-## [11] &quot;wind_gust&quot;  &quot;precip&quot;     &quot;pressure&quot;   &quot;visib&quot;      &quot;time_hour&quot;</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 </div>
 <div id="drop-unimportant-variables-so-its-easier-to-understand-the-join-results.-also-take-first-1000-rows-to-run-it-faster." class="section level3">
 <h3>2. Drop unimportant variables so it’s easier to understand the join results. Also take first 1000 rows to run it faster.</h3>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZmxpZ2h0czIgPC0gZmxpZ2h0c1sxOjEwMDAsXSAlPiUgXG4gIHNlbGVjdCh5ZWFyLCB0YWlsbnVtLCBjYXJyaWVyLCB0aW1lX2hvdXIpXG5kaW0oZmxpZ2h0czIpXG5gYGAifQ== -->
 <pre class="r"><code>flights2 &lt;- flights[1:1000,] %&gt;% 
-  select(year, tailnum, carrier, time_hour)</code></pre>
+  select(year, tailnum, carrier, time_hour)
+dim(flights2)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 </div>
 <div id="add-airline-names-to-flights2-from-airlines-dataset." class="section level3">
 <h3>3. Add airline names to <code>flights2</code> from <code>airlines</code> dataset.</h3>
-<pre class="r"><code># Which join function to use?</code></pre>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGVmdF9qb2luKGZsaWdodHMyLCBhaXJsaW5lcylcblxuYGBgIn0= -->
+<pre class="r"><code>left_join(flights2, airlines)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiSm9pbmluZywgYnkgPSBcImNhcnJpZXJcIlxuIn0= -->
+<pre><code>Joining, by = &quot;carrier&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBBIHRpYmJsZTogMSwwMDAgeCA1XG4gICAgeWVhciB0YWlsbnVtIGNhcnJpZXIgdGltZV9ob3VyICAgICAgICAgICBuYW1lICAgICAgICAgICAgICAgICAgICBcbiAgIDxpbnQ+IDxjaHI+ICAgPGNocj4gICA8ZHR0bT4gICAgICAgICAgICAgIDxjaHI+ICAgICAgICAgICAgICAgICAgIFxuIDEgIDIwMTMgTjE0MjI4ICBVQSAgICAgIDIwMTMtMDEtMDEgMDU6MDA6MDAgVW5pdGVkIEFpciBMaW5lcyBJbmMuICAgXG4gMiAgMjAxMyBOMjQyMTEgIFVBICAgICAgMjAxMy0wMS0wMSAwNTowMDowMCBVbml0ZWQgQWlyIExpbmVzIEluYy4gICBcbiAzICAyMDEzIE42MTlBQSAgQUEgICAgICAyMDEzLTAxLTAxIDA1OjAwOjAwIEFtZXJpY2FuIEFpcmxpbmVzIEluYy4gIFxuIDQgIDIwMTMgTjgwNEpCICBCNiAgICAgIDIwMTMtMDEtMDEgMDU6MDA6MDAgSmV0Qmx1ZSBBaXJ3YXlzICAgICAgICAgXG4gNSAgMjAxMyBONjY4RE4gIERMICAgICAgMjAxMy0wMS0wMSAwNjowMDowMCBEZWx0YSBBaXIgTGluZXMgSW5jLiAgICBcbiA2ICAyMDEzIE4zOTQ2MyAgVUEgICAgICAyMDEzLTAxLTAxIDA1OjAwOjAwIFVuaXRlZCBBaXIgTGluZXMgSW5jLiAgIFxuIDcgIDIwMTMgTjUxNkpCICBCNiAgICAgIDIwMTMtMDEtMDEgMDY6MDA6MDAgSmV0Qmx1ZSBBaXJ3YXlzICAgICAgICAgXG4gOCAgMjAxMyBOODI5QVMgIEVWICAgICAgMjAxMy0wMS0wMSAwNjowMDowMCBFeHByZXNzSmV0IEFpcmxpbmVzIEluYy5cbiA5ICAyMDEzIE41OTNKQiAgQjYgICAgICAyMDEzLTAxLTAxIDA2OjAwOjAwIEpldEJsdWUgQWlyd2F5cyAgICAgICAgIFxuMTAgIDIwMTMgTjNBTEFBICBBQSAgICAgIDIwMTMtMDEtMDEgMDY6MDA6MDAgQW1lcmljYW4gQWlybGluZXMgSW5jLiAgXG4jIC4uLiB3aXRoIDk5MCBtb3JlIHJvd3NcbiJ9 -->
+<pre><code># A tibble: 1,000 x 5
+    year tailnum carrier time_hour           name                    
+   &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;dttm&gt;              &lt;chr&gt;                   
+ 1  2013 N14228  UA      2013-01-01 05:00:00 United Air Lines Inc.   
+ 2  2013 N24211  UA      2013-01-01 05:00:00 United Air Lines Inc.   
+ 3  2013 N619AA  AA      2013-01-01 05:00:00 American Airlines Inc.  
+ 4  2013 N804JB  B6      2013-01-01 05:00:00 JetBlue Airways         
+ 5  2013 N668DN  DL      2013-01-01 06:00:00 Delta Air Lines Inc.    
+ 6  2013 N39463  UA      2013-01-01 05:00:00 United Air Lines Inc.   
+ 7  2013 N516JB  B6      2013-01-01 06:00:00 JetBlue Airways         
+ 8  2013 N829AS  EV      2013-01-01 06:00:00 ExpressJet Airlines Inc.
+ 9  2013 N593JB  B6      2013-01-01 06:00:00 JetBlue Airways         
+10  2013 N3ALAA  AA      2013-01-01 06:00:00 American Airlines Inc.  
+# ... with 990 more rows</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 </div>
 <div id="add-weather-information-to-the-flights2-dataset-by-matching-year-and-time_hour-variables." class="section level3">
 <h3>4. Add <code>weather</code> information to the <code>flights2</code> dataset by matching “year” and “time_hour” variables.</h3>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 </div>
 <div id="add-weather-information-to-the-flights2-dataset-by-matching-only-time_hour-variable" class="section level3">
 <h3>5. Add <code>weather</code> information to the <code>flights2</code> dataset by matching only “time_hour” variable</h3>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 </div>
 </div>
 <div id="types-of-filtering-join" class="section level2">
@@ -299,20 +542,21 @@ class(flights)</code></pre>
 </div>
 <div id="create-two-tibbles-named-y-and-z-similar-to-data-wrangling-cheatsheet" class="section level3">
 <h3>create two tibbles named <code>y</code> and <code>z</code>, similar to Data Wrangling Cheatsheet</h3>
-<pre class="r"><code>(y &lt;-  tibble(x1 = LETTERS[1:3], x2 = 1:3))</code></pre>
-<pre><code>## # A tibble: 3 x 2
-##   x1       x2
-##   &lt;chr&gt; &lt;int&gt;
-## 1 A         1
-## 2 B         2
-## 3 C         3</code></pre>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuKHkgPC0gIHRpYmJsZSh4MSA9IExFVFRFUlNbMTozXSwgeDIgPSAxOjMpKVxuXG5gYGAifQ== -->
+<pre class="r"><code>(y &lt;-  tibble(x1 = LETTERS[1:3], x2 = 1:3))
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuKHogPC0gdGliYmxlKHgxID0gYyhcIkJcIiwgXCJDXCIsIFwiRFwiKSwgeDIgPSAyOjQpKVxuYGBgIn0= -->
 <pre class="r"><code>(z &lt;- tibble(x1 = c(&quot;B&quot;, &quot;C&quot;, &quot;D&quot;), x2 = 2:4))</code></pre>
-<pre><code>## # A tibble: 3 x 2
-##   x1       x2
-##   &lt;chr&gt; &lt;int&gt;
-## 1 B         2
-## 2 C         3
-## 3 D         4</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 </div>
 <div id="example-for-intersect-rows-that-appear-in-both-y-and-z" class="section level3">
 <h3>example for <code>intersect</code>: Rows that appear in both <code>y</code> and <code>z</code></h3>
@@ -325,13 +569,13 @@ class(flights)</code></pre>
 </div>
 <div id="what-happen-if-colnames-are-differentin-y-and-x-is-there-any-error-message-and-why" class="section level3">
 <h3>what happen if colnames are differentin <code>y</code> and <code>x</code>? Is there any error message and why?</h3>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuKHggPC0gdGliYmxlKHgxID0gYyhcIkJcIiwgXCJDXCIsIFwiRFwiKSwgeDMgPSAyOjQpKVxuYGBgIn0= -->
 <pre class="r"><code>(x &lt;- tibble(x1 = c(&quot;B&quot;, &quot;C&quot;, &quot;D&quot;), x3 = 2:4))</code></pre>
-<pre><code>## # A tibble: 3 x 2
-##   x1       x3
-##   &lt;chr&gt; &lt;int&gt;
-## 1 B         2
-## 2 C         3
-## 3 D         4</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 </div>
 </div>
 <div id="types-of-binding-datasets" class="section level2">
@@ -365,7 +609,7 @@ class(flights)</code></pre>
 </div>
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiT2N0LTRjbTAxMC1pbi1jbGFzcyIKYXV0aG9yOiAiUmFjaGVsIExvYmF5IgpkYXRlOiAnMjAxOC0xMC0wNCcKb3V0cHV0OiBodG1sX25vdGVib29rCmVkaXRvcl9vcHRpb25zOiAKICBjaHVua19vdXRwdXRfdHlwZTogaW5saW5lCi0tLQoKY20wMDggRXhlcmNpc2VzCj09PT09PT09PT09PT09PT0KCkluc3RhbGwgYG55Y2ZsaWdodHMxM2AgcGFja2FnZQotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KCmBgYCByCmluc3RhbGwucGFja2FnZXMoIm55Y2ZsaWdodHMxMyIpCmBgYAoKYGBgIHIKc3VwcHJlc3NQYWNrYWdlU3RhcnR1cE1lc3NhZ2VzKGxpYnJhcnkodGlkeXZlcnNlKSkKc3VwcHJlc3NQYWNrYWdlU3RhcnR1cE1lc3NhZ2VzKGxpYnJhcnkobnljZmxpZ2h0czEzKSkKYGBgCgpUeXBlcyBvZiBtdXRhdGluZyBqb2luCi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KCiMjIyBMZXQncyBqb2luIHRpYmJsZXMgdXNpbmcgZm91ciBtdXRhdGluZyBmdW5jdGlvbnM6IGBsZWZ0X2pvaW5gLCBgcmlnaHRfam9pbmAsIGBpbm5lcl9qb2luYCBhbmQgYGZ1bGxfam9pbmAuCgojIyMgY3JlYXRlIHR3byB0aWJibGVzIG5hbWVkIGBhYCBhbmQgYGJgCgpgYGAgcgooYSA8LSB0aWJibGUoeDEgPSBMRVRURVJTWzE6M10sIHgyID0gMTozKSkKYGBgCgogICAgIyMgIyBBIHRpYmJsZTogMyB4IDIKICAgICMjICAgeDEgICAgICAgeDIKICAgICMjICAgPGNocj4gPGludD4KICAgICMjIDEgQSAgICAgICAgIDEKICAgICMjIDIgQiAgICAgICAgIDIKICAgICMjIDMgQyAgICAgICAgIDMKCmBgYCByCihiIDwtIHRpYmJsZSh4MSA9IExFVFRFUlNbYygxLDIsNCldLCB4MyA9IGMoIlQiLCAiRiIsICJUIikpKQpgYGAKCiAgICAjIyAjIEEgdGliYmxlOiAzIHggMgogICAgIyMgICB4MSAgICB4MyAgIAogICAgIyMgICA8Y2hyPiA8Y2hyPgogICAgIyMgMSBBICAgICBUICAgIAogICAgIyMgMiBCICAgICBGICAgIAogICAgIyMgMyBEICAgICBUCgojIyMgbGVmdFxfam9pbjogSm9pbiBtYXRjaGluZyByb3dzIGZyb20gYGJgIHRvIGBhYCBieSBtYXRjaGluZyAieDEiIHZhcmlhYmxlCgojIyMgcmlnaHRcX2pvaW46IEpvaW4gbWF0Y2hpbmcgcm93cyBmcm9tIGBhYCB0byBgYmAgYnkgbWF0Y2hpbmcgIngxIiB2YXJpYWJsZS4KCiMjIyBpbm5lclxfam9pbjogSm9pbiBkYXRhLiBSZXRhaW4gb25seSByb3dzIGluIGJvdGggc2V0cyBgYWAgdG8gYGJgIGJ5IG1hdGNoaW5nICJ4MSIgdmFyaWFibGUuCgojIyMgZnVsbFxfam9pbjogSm9pbiBkYXRhLiBSZXRhaW4gYWxsIHZhbHVlcywgYWxsIHJvd3Mgb2YgYGFgIHRvIGBiYCBieSBtYXRjaGluZyAieDEiCgojIyMgd2hhdCBoYXBwZW4gaWYgd2UgZG8gbm90IHNwZWNpZnkgYGJ5YCBvcHRpb24/CgojIyMgd2hhdCBoYXBwZW4gaWYgd2Ugam9pbiB0d28gZGlmZmVyZW50IHZhcmlhYmxlcyAoZS5nLiwgIngxIiB0byAieDMiKSBmcm9tIHR3byB0aWJibGVzIGBhYCB0byBgYmA/CgojIyMgd2hhdCBoYXBwZW4gaWYgdHdvIGNvbHVtbnMgb2YgYGFgIGFuZCBgY2AgZGF0YXNldHMgaGF2ZSB0aGUgaWRlbnRpY2FsIGNvbG5hbWVzPwoKYGBgIHIKIyBtYWtlIGRhdGEgZnJhbWUgYyBhbmQgdXNlIGlubmVyX2pvaW4oKQooYyA8LSB0aWJibGUoeDEgPSBjKExFVFRFUlNbMToyXSwieCIpLCB4MiA9IGMoMSw0LDUpKSkKYGBgCgogICAgIyMgIyBBIHRpYmJsZTogMyB4IDIKICAgICMjICAgeDEgICAgICAgeDIKICAgICMjICAgPGNocj4gPGRibD4KICAgICMjIDEgQSAgICAgICAgIDEKICAgICMjIDIgQiAgICAgICAgIDQKICAgICMjIDMgeCAgICAgICAgIDUKCkluIGNsYXNzIHByYWN0aWNlCi0tLS0tLS0tLS0tLS0tLS0tCgpgbnljZmxpZ2h0czEzYCBkYXRhc2V0IGhhcyBzZXZlcmFsIHRpYmJsZXMgZS5nLiwgYGZsaWdodHNgLCBgYWlycG9ydHNgLCBgcGxhbmVzYCwgYHdlYXRoZXJgLgoKIyMjIDEuIEV4cGxvcmUgYG55Y2ZsaWdodHMxM2AgZGF0YXNldAoKYGBgIHIKI2NoZWNrIHRoZSB0aWJibGVzIGluY2x1ZGVkIGluIGBueWNmbGlnaHRzMTNgIHBhY2thZ2UKY2xhc3MoZmxpZ2h0cykKYGBgCgogICAgIyMgWzFdICJ0YmxfZGYiICAgICAidGJsIiAgICAgICAgImRhdGEuZnJhbWUiCgpgYGAgcgpjb2xuYW1lcyhmbGlnaHRzKQpgYGAKCiAgICAjIyAgWzFdICJ5ZWFyIiAgICAgICAgICAgIm1vbnRoIiAgICAgICAgICAiZGF5IiAgICAgICAgICAgICJkZXBfdGltZSIgICAgICAKICAgICMjICBbNV0gInNjaGVkX2RlcF90aW1lIiAiZGVwX2RlbGF5IiAgICAgICJhcnJfdGltZSIgICAgICAgInNjaGVkX2Fycl90aW1lIgogICAgIyMgIFs5XSAiYXJyX2RlbGF5IiAgICAgICJjYXJyaWVyIiAgICAgICAgImZsaWdodCIgICAgICAgICAidGFpbG51bSIgICAgICAgCiAgICAjIyBbMTNdICJvcmlnaW4iICAgICAgICAgImRlc3QiICAgICAgICAgICAiYWlyX3RpbWUiICAgICAgICJkaXN0YW5jZSIgICAgICAKICAgICMjIFsxN10gImhvdXIiICAgICAgICAgICAibWludXRlIiAgICAgICAgICJ0aW1lX2hvdXIiCgpgYGAgcgpjb2xuYW1lcyhhaXJsaW5lcykKYGBgCgogICAgIyMgWzFdICJjYXJyaWVyIiAibmFtZSIKCmBgYCByCmNvbG5hbWVzKHdlYXRoZXIpCmBgYAoKICAgICMjICBbMV0gIm9yaWdpbiIgICAgICJ5ZWFyIiAgICAgICAibW9udGgiICAgICAgImRheSIgICAgICAgICJob3VyIiAgICAgIAogICAgIyMgIFs2XSAidGVtcCIgICAgICAgImRld3AiICAgICAgICJodW1pZCIgICAgICAid2luZF9kaXIiICAgIndpbmRfc3BlZWQiCiAgICAjIyBbMTFdICJ3aW5kX2d1c3QiICAicHJlY2lwIiAgICAgInByZXNzdXJlIiAgICJ2aXNpYiIgICAgICAidGltZV9ob3VyIgoKIyMjIDIuIERyb3AgdW5pbXBvcnRhbnQgdmFyaWFibGVzIHNvIGl0J3MgZWFzaWVyIHRvIHVuZGVyc3RhbmQgdGhlIGpvaW4gcmVzdWx0cy4gQWxzbyB0YWtlIGZpcnN0IDEwMDAgcm93cyB0byBydW4gaXQgZmFzdGVyLgoKYGBgIHIKZmxpZ2h0czIgPC0gZmxpZ2h0c1sxOjEwMDAsXSAlPiUgCiAgc2VsZWN0KHllYXIsIHRhaWxudW0sIGNhcnJpZXIsIHRpbWVfaG91cikKYGBgCgojIyMgMy4gQWRkIGFpcmxpbmUgbmFtZXMgdG8gYGZsaWdodHMyYCBmcm9tIGBhaXJsaW5lc2AgZGF0YXNldC4KCmBgYCByCiMgV2hpY2ggam9pbiBmdW5jdGlvbiB0byB1c2U/CmBgYAoKIyMjIDQuIEFkZCBgd2VhdGhlcmAgaW5mb3JtYXRpb24gdG8gdGhlIGBmbGlnaHRzMmAgZGF0YXNldCBieSBtYXRjaGluZyAieWVhciIgYW5kICJ0aW1lXF9ob3VyIiB2YXJpYWJsZXMuCgojIyMgNS4gQWRkIGB3ZWF0aGVyYCBpbmZvcm1hdGlvbiB0byB0aGUgYGZsaWdodHMyYCBkYXRhc2V0IGJ5IG1hdGNoaW5nIG9ubHkgInRpbWVcX2hvdXIiIHZhcmlhYmxlCgpUeXBlcyBvZiBmaWx0ZXJpbmcgam9pbgotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQoKIyMjIExldCdzIGZpbHRlciB0aWJibGVzIHVzaW5nIHR3byBmaWx0ZXJpbmcgZnVuY3Rpb25zOiBgc2VtaV9qb2luYCwgYGFudGlfam9pbmAKCiMjIyBleGFtcGxlIGZvciBgc2VtaV9qb2luYDogQWxsIHJvd3MgaW4gYGFgIHRoYXQgaGF2ZSBhIG1hdGNoIGluIGBiYAoKIyMjIGV4YW1wbGUgZm9yIGBhbnRpX2pvaW5gOiBBbGwgcm93cyBpbiBgYWAgdGhhdCBkbyBub3QgaGF2ZSBhIG1hdGNoIGluIGBiYAoKIyMjIGV4YW1wbGUgb2Ygam9pbmluIGJ5IG1hdGNoaW5nIHR3byB2YXJpYWJsZXMgKGUuZy4sICJ4MSIsICJ4MiIpIGZyb20gYm90aCBkYXRhc2V0cyBgYWAgYW5kIGBjYAoKVHlwZXMgb2YgU2V0IE9wZXJhdGlvbnMgZm9yIHR3byBkYXRhc2V0cwotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCgojIyMgTGV0J3MgdXNlIHRocmVlIGBzZXRgIGZ1bmN0aW9uczogYGludGVyc2VjdGAsIGB1bmlvbmAgYW5kIGBzZXRkaWZmYAoKIyMjIGNyZWF0ZSB0d28gdGliYmxlcyBuYW1lZCBgeWAgYW5kIGB6YCwgc2ltaWxhciB0byBEYXRhIFdyYW5nbGluZyBDaGVhdHNoZWV0CgpgYGAgcgooeSA8LSAgdGliYmxlKHgxID0gTEVUVEVSU1sxOjNdLCB4MiA9IDE6MykpCmBgYAoKICAgICMjICMgQSB0aWJibGU6IDMgeCAyCiAgICAjIyAgIHgxICAgICAgIHgyCiAgICAjIyAgIDxjaHI+IDxpbnQ+CiAgICAjIyAxIEEgICAgICAgICAxCiAgICAjIyAyIEIgICAgICAgICAyCiAgICAjIyAzIEMgICAgICAgICAzCgpgYGAgcgooeiA8LSB0aWJibGUoeDEgPSBjKCJCIiwgIkMiLCAiRCIpLCB4MiA9IDI6NCkpCmBgYAoKICAgICMjICMgQSB0aWJibGU6IDMgeCAyCiAgICAjIyAgIHgxICAgICAgIHgyCiAgICAjIyAgIDxjaHI+IDxpbnQ+CiAgICAjIyAxIEIgICAgICAgICAyCiAgICAjIyAyIEMgICAgICAgICAzCiAgICAjIyAzIEQgICAgICAgICA0CgojIyMgZXhhbXBsZSBmb3IgYGludGVyc2VjdGA6IFJvd3MgdGhhdCBhcHBlYXIgaW4gYm90aCBgeWAgYW5kIGB6YAoKIyMjIGV4YW1wbGUgZm9yIGB1bmlvbmA6IFJvd3MgdGhhdCBhcHBlYXIgaW4gZWl0aGVyIG9yIGJvdGggYHlgIGFuZCBgemAKCiMjIyBleGFtcGxlIGZvciBgc2V0ZGlmZmA6IFJvd3MgdGhhdCBhcHBlYXIgaW4gYHlgIGJ1dCBub3QgYHpgLiAqKkNhdXRpb246KiogYHNldGRpZmZgIGZvciBgeWAgdG8gYHpgIGFuZCBgemAgdG8gYHlgIGFyZSBkaWZmZXJlbnQuCgojIyMgd2hhdCBoYXBwZW4gaWYgY29sbmFtZXMgYXJlIGRpZmZlcmVudGluIGB5YCBhbmQgYHhgPyBJcyB0aGVyZSBhbnkgZXJyb3IgbWVzc2FnZSBhbmQgd2h5PwoKYGBgIHIKKHggPC0gdGliYmxlKHgxID0gYygiQiIsICJDIiwgIkQiKSwgeDMgPSAyOjQpKQpgYGAKCiAgICAjIyAjIEEgdGliYmxlOiAzIHggMgogICAgIyMgICB4MSAgICAgICB4MwogICAgIyMgICA8Y2hyPiA8aW50PgogICAgIyMgMSBCICAgICAgICAgMgogICAgIyMgMiBDICAgICAgICAgMwogICAgIyMgMyBEICAgICAgICAgNAoKVHlwZXMgb2YgYmluZGluZyBkYXRhc2V0cwotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCgojIyMgTGV0J3MgYmluZCBkYXRhc2V0cyBieSByb3dzIG9yIGNvbHVtbiB1c2luZyB0d28gYmluZGluZyBmdW5jdGlvbnM6CgojIyMgZXhhbXBsZSBmb3IgYGJpbmRfcm93c2A6IEFwcGVuZCBgemAgdG8gYHlgIGFzIG5ldyByb3dzCgojIyMgZXhhbXBsZSBmb3IgYGJpbmRfY29sc2A6IEFwcGVuZCBgemAgdG8gYHlgIGFzIG5ldyBjb2x1bW5zLiAqKkNhdXRpb24qKjogbWF0Y2hlcyByb3dzIGJ5IHBvc2l0aW9uLiBDaGVjayBjb2xuYW1lcyBhZnRlciBiaW5kaW5nLgoKIyMjIHdoYXQgaGFwcGVuIGlmIGNvbG5hbWVzIGFyZSBkaWZmZXJlbnQgYmV0d2VlbiBgeWAgYW5kIGB4YCBkYXRhc2V0cz8KClByYWN0aWNlIEV4ZXJjaXNlcwotLS0tLS0tLS0tLS0tLS0tLS0KClByYWN0aWNlIHRoZXNlIGNvbmNlcHRzIGluIHRoZSBmb2xsb3dpbmcgZXhlcmNpc2VzLiBJdCBtaWdodCBoZWxwIHlvdSB0byBmaXJzdCBpZGVudGlmeSB0aGUgdHlwZSBvZiBmdW5jdGlvbiB5b3UgYXJlIGFwcGx5aW5nLgoKIyMjIDEuIEZpbHRlciB0aGUgcm93cyBvZiBgZmxpZ2h0czJgIGJ5IG1hdGNoaW5nICJ5ZWFyIiBhbmQgInRpbWVcX2hvdXIiIHZhcmlhYmxlcyB0byBgd2VhdGhlcmAgZGF0YXNldC4gVXNlIGJvdGggYHNlbWlfam9pbigpYCBhbmQgYGFudGlfam9pbigpYAoKIyMjIDIuIENhbiB3ZSBhcHBseSBgc2V0YCBhbmQgYGJpbmRpbmdgIGZ1bmNpb25zIGJldHdlZW4gYGZsaWdodHMyYCBhbmQgYHdlYXRoZXJgIGRhdGFzZXRzLiBXaHkgYW5kIHdoeSBub3Q/CgojIyMgMy4gTGV0J3MgY3JlYXRlIGEgdGliYmxlIGBwYCB3aXRoICJ4MSIgYW5kICJ4MiIgY291bG1ucyBhbmQgaGF2ZSBkdXBsaWNhdGVkIGVsZW1lbnQgaW4gIngxIiBjb2x1bW4uIENyZWF0ZSBhbm90aGVyIHRpYmJsZSBgcWAgd2l0aCAieDEiIGFuZCAieDMiIGNvbHVtbnMuIFRoZW4gYXBwbHkgYGxlZnRfam9pbmAgZnVuY3Rpb24gYHBgIHRvIGBxYCBhbmQgYHFgIHRvIGBwYC4=</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiT2N0LTRjbTAxMC1pbi1jbGFzcyIKYXV0aG9yOiAiUmFjaGVsIExvYmF5IgpkYXRlOiAnMjAxOC0xMC0wNCcKb3V0cHV0OiBodG1sX25vdGVib29rCmVkaXRvcl9vcHRpb25zOiAKICBjaHVua19vdXRwdXRfdHlwZTogaW5saW5lCi0tLQoKY20wMDggRXhlcmNpc2VzCj09PT09PT09PT09PT09PT0KCkluc3RhbGwgYG55Y2ZsaWdodHMxM2AgcGFja2FnZQotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KCmBgYHtyfQppbnN0YWxsLnBhY2thZ2VzKCJueWNmbGlnaHRzMTMiKQpgYGAKCmBgYHtyfQpzdXBwcmVzc1BhY2thZ2VTdGFydHVwTWVzc2FnZXMobGlicmFyeSh0aWR5dmVyc2UpKQpzdXBwcmVzc1BhY2thZ2VTdGFydHVwTWVzc2FnZXMobGlicmFyeShueWNmbGlnaHRzMTMpKQpgYGAKClR5cGVzIG9mIG11dGF0aW5nIGpvaW4KLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQoKIyMjIExldCdzIGpvaW4gdGliYmxlcyB1c2luZyBmb3VyIG11dGF0aW5nIGZ1bmN0aW9uczogYGxlZnRfam9pbmAsIGByaWdodF9qb2luYCwgYGlubmVyX2pvaW5gIGFuZCBgZnVsbF9qb2luYC4KCiMjIyBjcmVhdGUgdHdvIHRpYmJsZXMgbmFtZWQgYGFgIGFuZCBgYmAKCmBgYHtyfQooYSA8LSB0aWJibGUoeDEgPSBMRVRURVJTWzE6M10sIHgyID0gMTozKSkKYGBgCgoKICAgICMjICMgQSB0aWJibGU6IDMgeCAyCiAgICAjIyAgIHgxICAgICAgIHgyCiAgICAjIyAgIDxjaHI+IDxpbnQ+CiAgICAjIyAxIEEgICAgICAgICAxCiAgICAjIyAyIEIgICAgICAgICAyCiAgICAjIyAzIEMgICAgICAgICAzCgpgYGB7cn0KKGIgPC0gdGliYmxlKHgxID0gTEVUVEVSU1tjKDEsMiw0KV0sIHgzID0gYygiVCIsICJGIiwgIlQiKSkpCmBgYAoKICAgICMjICMgQSB0aWJibGU6IDMgeCAyCiAgICAjIyAgIHgxICAgIHgzICAgCiAgICAjIyAgIDxjaHI+IDxjaHI+CiAgICAjIyAxIEEgICAgIFQgICAgCiAgICAjIyAyIEIgICAgIEYgICAgCiAgICAjIyAzIEQgICAgIFQKCiMjIyBsZWZ0XF9qb2luOiBKb2luIG1hdGNoaW5nIHJvd3MgZnJvbSBgYmAgdG8gYGFgIGJ5IG1hdGNoaW5nICJ4MSIgdmFyaWFibGUKCmBgYHtyfQpsZWZ0X2pvaW4oYSwgYiwgYnk9IngxIikKYGBgCgoKIyMjIHJpZ2h0XF9qb2luOiBKb2luIG1hdGNoaW5nIHJvd3MgZnJvbSBgYWAgdG8gYGJgIGJ5IG1hdGNoaW5nICJ4MSIgdmFyaWFibGUuCgpgYGB7cn0KcmlnaHRfam9pbihhLCBiLCBieT0ieDEiKQpgYGAKCiMjIyBpbm5lclxfam9pbjogSm9pbiBkYXRhLiBSZXRhaW4gb25seSByb3dzIGluIGJvdGggc2V0cyBgYWAgdG8gYGJgIGJ5IG1hdGNoaW5nICJ4MSIgdmFyaWFibGUuCgpgYGB7cn0KaW5uZXJfam9pbihhLCBiLCBieSA9ICJ4MSIpCmBgYAoKIyMjIGZ1bGxcX2pvaW46IEpvaW4gZGF0YS4gUmV0YWluIGFsbCB2YWx1ZXMsIGFsbCByb3dzIG9mIGBhYCB0byBgYmAgYnkgbWF0Y2hpbmcgIngxIgoKYGBge3J9CmZ1bGxfam9pbihhLCBiLCBieSA9ICJ4MSIpCmBgYAoKIyMjIHdoYXQgaGFwcGVuIGlmIHdlIGRvIG5vdCBzcGVjaWZ5IGBieWAgb3B0aW9uPwoKYGBge3J9CmZ1bGxfam9pbihhLCBiKQpgYGAKCiMjIyB3aGF0IGhhcHBlbiBpZiB3ZSBqb2luIHR3byBkaWZmZXJlbnQgdmFyaWFibGVzIChlLmcuLCAieDEiIHRvICJ4MyIpIGZyb20gdHdvIHRpYmJsZXMgYGFgIHRvIGBiYD8KCmBgYHtyfQpsZWZ0X2pvaW4oYSwgYiwgYnkgPSBjKCJ4MSIgPSAieDMiKSkKYGBgCgojIyMgd2hhdCBoYXBwZW4gaWYgdHdvIGNvbHVtbnMgb2YgYGFgIGFuZCBgY2AgZGF0YXNldHMgaGF2ZSB0aGUgaWRlbnRpY2FsIGNvbG5hbWVzPwoKYGBge3J9CgojIG1ha2UgZGF0YSBmcmFtZSBjIGFuZCB1c2UgaW5uZXJfam9pbigpCihjIDwtIHRpYmJsZSh4MSA9IGMoTEVUVEVSU1sxOjJdLCJ4IiksIHgyID0gYygxLDQsNSkpKQoKbGVmdF9qb2luKGEsIGMpCmBgYAoKCgogICAgIyMgIyBBIHRpYmJsZTogMyB4IDIKICAgICMjICAgeDEgICAgICAgeDIKICAgICMjICAgPGNocj4gPGRibD4KICAgICMjIDEgQSAgICAgICAgIDEKICAgICMjIDIgQiAgICAgICAgIDQKICAgICMjIDMgeCAgICAgICAgIDUKCkluIGNsYXNzIHByYWN0aWNlCi0tLS0tLS0tLS0tLS0tLS0tCgpgbnljZmxpZ2h0czEzYCBkYXRhc2V0IGhhcyBzZXZlcmFsIHRpYmJsZXMgZS5nLiwgYGZsaWdodHNgLCBgYWlycG9ydHNgLCBgcGxhbmVzYCwgYHdlYXRoZXJgLgoKIyMjIDEuIEV4cGxvcmUgYG55Y2ZsaWdodHMxM2AgZGF0YXNldAoKCmBgYHtyfQojY2hlY2sgdGhlIHRpYmJsZXMgaW5jbHVkZWQgaW4gYG55Y2ZsaWdodHMxM2AgcGFja2FnZQpjbGFzcyhmbGlnaHRzKQpgYGAKCgpgYGB7cn0KY29sbmFtZXMoZmxpZ2h0cykKCmBgYAoKY29sbmFtZXMoZmxpZ2h0cykKCgpgYGB7cn0KY29sbmFtZXMoYWlybGluZXMpCmBgYAoKYGBge3J9CmNvbG5hbWVzKHdlYXRoZXIpCmBgYAoKCgojIyMgMi4gRHJvcCB1bmltcG9ydGFudCB2YXJpYWJsZXMgc28gaXQncyBlYXNpZXIgdG8gdW5kZXJzdGFuZCB0aGUgam9pbiByZXN1bHRzLiBBbHNvIHRha2UgZmlyc3QgMTAwMCByb3dzIHRvIHJ1biBpdCBmYXN0ZXIuCgpgYGB7cn0KZmxpZ2h0czIgPC0gZmxpZ2h0c1sxOjEwMDAsXSAlPiUgCiAgc2VsZWN0KHllYXIsIHRhaWxudW0sIGNhcnJpZXIsIHRpbWVfaG91cikKZGltKGZsaWdodHMyKQpgYGAKCgoKIyMjIDMuIEFkZCBhaXJsaW5lIG5hbWVzIHRvIGBmbGlnaHRzMmAgZnJvbSBgYWlybGluZXNgIGRhdGFzZXQuCgpgYGB7cn0KIyBXaGljaCBqb2luIGZ1bmN0aW9uIHRvIHVzZT8KY29sbmFtZXMoYWlybGluZXMpCmNvbG5hbWVzKGZsaWdodHMpCgpsZWZ0X2pvaW4oZmxpZ2h0czIsIGFpcmxpbmVzKQpgYGAKCgojIyMgNC4gQWRkIGB3ZWF0aGVyYCBpbmZvcm1hdGlvbiB0byB0aGUgYGZsaWdodHMyYCBkYXRhc2V0IGJ5IG1hdGNoaW5nICJ5ZWFyIiBhbmQgInRpbWVcX2hvdXIiIHZhcmlhYmxlcy4KCmBgYHtyfQoKYGBgCgojIyMgNS4gQWRkIGB3ZWF0aGVyYCBpbmZvcm1hdGlvbiB0byB0aGUgYGZsaWdodHMyYCBkYXRhc2V0IGJ5IG1hdGNoaW5nIG9ubHkgInRpbWVcX2hvdXIiIHZhcmlhYmxlCgpgYGB7cn0KCmBgYAoKClR5cGVzIG9mIGZpbHRlcmluZyBqb2luCi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCgojIyMgTGV0J3MgZmlsdGVyIHRpYmJsZXMgdXNpbmcgdHdvIGZpbHRlcmluZyBmdW5jdGlvbnM6IGBzZW1pX2pvaW5gLCBgYW50aV9qb2luYAoKIyMjIGV4YW1wbGUgZm9yIGBzZW1pX2pvaW5gOiBBbGwgcm93cyBpbiBgYWAgdGhhdCBoYXZlIGEgbWF0Y2ggaW4gYGJgCgojIyMgZXhhbXBsZSBmb3IgYGFudGlfam9pbmA6IEFsbCByb3dzIGluIGBhYCB0aGF0IGRvIG5vdCBoYXZlIGEgbWF0Y2ggaW4gYGJgCgojIyMgZXhhbXBsZSBvZiBqb2luaW4gYnkgbWF0Y2hpbmcgdHdvIHZhcmlhYmxlcyAoZS5nLiwgIngxIiwgIngyIikgZnJvbSBib3RoIGRhdGFzZXRzIGBhYCBhbmQgYGNgCgpUeXBlcyBvZiBTZXQgT3BlcmF0aW9ucyBmb3IgdHdvIGRhdGFzZXRzCi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KCiMjIyBMZXQncyB1c2UgdGhyZWUgYHNldGAgZnVuY3Rpb25zOiBgaW50ZXJzZWN0YCwgYHVuaW9uYCBhbmQgYHNldGRpZmZgCgojIyMgY3JlYXRlIHR3byB0aWJibGVzIG5hbWVkIGB5YCBhbmQgYHpgLCBzaW1pbGFyIHRvIERhdGEgV3JhbmdsaW5nIENoZWF0c2hlZXQKCgpgYGB7cn0KKHkgPC0gIHRpYmJsZSh4MSA9IExFVFRFUlNbMTozXSwgeDIgPSAxOjMpKQoKYGBgCgoKCgoKYGBge3J9Cih6IDwtIHRpYmJsZSh4MSA9IGMoIkIiLCAiQyIsICJEIiksIHgyID0gMjo0KSkKYGBgCgoKCgojIyMgZXhhbXBsZSBmb3IgYGludGVyc2VjdGA6IFJvd3MgdGhhdCBhcHBlYXIgaW4gYm90aCBgeWAgYW5kIGB6YAoKIyMjIGV4YW1wbGUgZm9yIGB1bmlvbmA6IFJvd3MgdGhhdCBhcHBlYXIgaW4gZWl0aGVyIG9yIGJvdGggYHlgIGFuZCBgemAKCiMjIyBleGFtcGxlIGZvciBgc2V0ZGlmZmA6IFJvd3MgdGhhdCBhcHBlYXIgaW4gYHlgIGJ1dCBub3QgYHpgLiAqKkNhdXRpb246KiogYHNldGRpZmZgIGZvciBgeWAgdG8gYHpgIGFuZCBgemAgdG8gYHlgIGFyZSBkaWZmZXJlbnQuCgojIyMgd2hhdCBoYXBwZW4gaWYgY29sbmFtZXMgYXJlIGRpZmZlcmVudGluIGB5YCBhbmQgYHhgPyBJcyB0aGVyZSBhbnkgZXJyb3IgbWVzc2FnZSBhbmQgd2h5PwoKCmBgYHtyfQooeCA8LSB0aWJibGUoeDEgPSBjKCJCIiwgIkMiLCAiRCIpLCB4MyA9IDI6NCkpCmBgYAoKClR5cGVzIG9mIGJpbmRpbmcgZGF0YXNldHMKLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQoKIyMjIExldCdzIGJpbmQgZGF0YXNldHMgYnkgcm93cyBvciBjb2x1bW4gdXNpbmcgdHdvIGJpbmRpbmcgZnVuY3Rpb25zOgoKIyMjIGV4YW1wbGUgZm9yIGBiaW5kX3Jvd3NgOiBBcHBlbmQgYHpgIHRvIGB5YCBhcyBuZXcgcm93cwoKIyMjIGV4YW1wbGUgZm9yIGBiaW5kX2NvbHNgOiBBcHBlbmQgYHpgIHRvIGB5YCBhcyBuZXcgY29sdW1ucy4gKipDYXV0aW9uKio6IG1hdGNoZXMgcm93cyBieSBwb3NpdGlvbi4gQ2hlY2sgY29sbmFtZXMgYWZ0ZXIgYmluZGluZy4KCiMjIyB3aGF0IGhhcHBlbiBpZiBjb2xuYW1lcyBhcmUgZGlmZmVyZW50IGJldHdlZW4gYHlgIGFuZCBgeGAgZGF0YXNldHM/CgpQcmFjdGljZSBFeGVyY2lzZXMKLS0tLS0tLS0tLS0tLS0tLS0tCgpQcmFjdGljZSB0aGVzZSBjb25jZXB0cyBpbiB0aGUgZm9sbG93aW5nIGV4ZXJjaXNlcy4gSXQgbWlnaHQgaGVscCB5b3UgdG8gZmlyc3QgaWRlbnRpZnkgdGhlIHR5cGUgb2YgZnVuY3Rpb24geW91IGFyZSBhcHBseWluZy4KCiMjIyAxLiBGaWx0ZXIgdGhlIHJvd3Mgb2YgYGZsaWdodHMyYCBieSBtYXRjaGluZyAieWVhciIgYW5kICJ0aW1lXF9ob3VyIiB2YXJpYWJsZXMgdG8gYHdlYXRoZXJgIGRhdGFzZXQuIFVzZSBib3RoIGBzZW1pX2pvaW4oKWAgYW5kIGBhbnRpX2pvaW4oKWAKCiMjIyAyLiBDYW4gd2UgYXBwbHkgYHNldGAgYW5kIGBiaW5kaW5nYCBmdW5jaW9ucyBiZXR3ZWVuIGBmbGlnaHRzMmAgYW5kIGB3ZWF0aGVyYCBkYXRhc2V0cy4gV2h5IGFuZCB3aHkgbm90PwoKIyMjIDMuIExldCdzIGNyZWF0ZSBhIHRpYmJsZSBgcGAgd2l0aCAieDEiIGFuZCAieDIiIGNvdWxtbnMgYW5kIGhhdmUgZHVwbGljYXRlZCBlbGVtZW50IGluICJ4MSIgY29sdW1uLiBDcmVhdGUgYW5vdGhlciB0aWJibGUgYHFgIHdpdGggIngxIiBhbmQgIngzIiBjb2x1bW5zLiBUaGVuIGFwcGx5IGBsZWZ0X2pvaW5gIGZ1bmN0aW9uIGBwYCB0byBgcWAgYW5kIGBxYCB0byBgcGAu</div>
 
 
 
