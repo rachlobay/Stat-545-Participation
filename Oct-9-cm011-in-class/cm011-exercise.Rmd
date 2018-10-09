@@ -267,13 +267,17 @@ is.list(small_df)
 
 ```{r}
 as.list(small_df)
+# Matrix:
+diag(5) 
+# matrices do not allow us to hold data of different types (1 type of data in matrix)
 ```
 
 Note that there's a difference between a list of one object, and that object itself! This is different from vectors.
 
 ```{r}
+# are the following identical objects?
 identical(list(4), 4)
-identical(c(4), 4)
+identical(c(4), 4) # vectors don't have the extra baggage like lists do
 ```
 
 # Part II
