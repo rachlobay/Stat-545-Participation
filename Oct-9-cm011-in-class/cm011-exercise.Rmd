@@ -146,21 +146,26 @@ a * 1:2
 This is true of comparison operators, too. Make a vector of logicals using a comparison operator.
 
 ```{r}
-
+a > 0
 ```
 
 
 Now try a boolean operator. Note that && and || are NOT vectorized!
 
 ```{r}
-
+a > 0 & a < 5
+a > 0 && a < 5 # not vectorized
+# && only compares the first entry of both vectors
+any(a > 0 & a < 5)
+all(a > 0 & a < 5)
 ```
 
 
 Recycling works with assignment, too. Replace the entire vector a with 1:2 repeated:
 
 ```{r}
-
+a[1:n] <- 1:2
+a
 ```
 
 
@@ -180,27 +185,32 @@ Let's give the components some names ("subject", "code", and "section") using th
 - Notice that the vector does not change!!
 
 ```{r}
-
+setNames(course, c("subject", "code", "section"))
+# functions in R like the setNames function don't change objects (ie. setNames doesn't change the course object)
+course
 ```
 
 
 2. Using the names function with `<-`. Also, just explore the names function.
 
 ```{r}
-
+names(course) <- c("subject", "code", "section")
 ```
 
 3. Re-constructing the vector, specifying names within `c()`.
 
 ```{r}
-
+course <- c(subject = "STAT", code = "545A", section = "S01")
+course
 ```
 
 
 Subset the entry labelled "section" and "subject". 
 
 ```{r}
+course[c("section", "subject")]
 
+course[["section"]] # [[]] only allows you to return a signle entry and only returns object (not header name)
 ```
 
 Amazingly, we can also subset by a vector of logicals (which will be recycled!). Let's work with our integer sequence vector again:
@@ -208,16 +218,17 @@ Amazingly, we can also subset by a vector of logicals (which will be recycled!).
 ```{r}
 (a <- 7:-2)
 (n <- length(a))
+a[a > 0] # omits all entries <= 0 
 ```
 
 ## Lists
 
-Unlike vectors, which are atomic/homogeneous, a list in R is heterogeneous. 
+Unlike vectors, which are atomic/homogeneous, a list in R is heterogeneous (ie. lists can hold basically anything)
 
 Try storing the course code (`"STAT"` and `545`) again, but this time in a list. Use the `list()` function.
 
 ```{r}
-
+(course <- list("STAT", 545)) # 545 is in original form --> not made into "545"
 ```
 
 
@@ -231,16 +242,20 @@ Lists can hold pretty much anything, and can also be named. Let's use the follow
 Subsetting a list works similarly to vectors. Try subsetting the first element of `my_list`; try subsettig the first _component_ of the list. Notice the difference!
 
 ```{r}
-
+my_list[2] # list of length 1 contains a vector of length 2
+my_list[[2]] # entry of that car (gets rid of list structure)
 ```
 
 Try also subsetting by name:
 
 ```{r}
-
+my_list["year"]
+my_list[["year"]]
+my_list$year # like [[]], returns entry of that car
 ```
 
-Smells a little like `data.frame`s. It turns out a `data.frame` is a special type of list:
+Smells a little like `data.frame`s. It turns out a `data.frame` is a special type of list
+# each component of a data frame must be of same length
 
 ```{r}
 (small_df <- tibble::tibble(x=1:5, y=letters[1:5]))
