@@ -240,6 +240,8 @@ What about when life Expectancy is not unique? Example: life expectancy of each 
 ```{r, fig.width=2, fig.height=1}
 ggplot(gapminder, aes(continent, lifeExp)) +
   geom_violin()
+
+
 ggplot(gapminder, aes(continent, lifeExp)) +
   geom_boxplot()
 ```
@@ -249,7 +251,17 @@ ggplot(gapminder, aes(continent, lifeExp)) +
 Exercise: Try making the above box plot and violin plots, ordered by median lifeExp. Try other functions to order by by modifying the `.fun` argument.
 
 ```{r, fig.width=2, fig.height=1}
+# ** fct_reorder() by default orders by the median lifeExp **
+gapminder %>% 
+mutate(contient = fct_reorder(continent, lifeExp)) %>% # reorder continents by median life Expectancy (more readable)
+ggplot(aes(continent, lifeExp)) +
+  geom_violin()
 
+
+gapminder %>% 
+mutate(continent = fct_reorder(continent, lifeExp)) %>% # reorder continents by median life Expectancy (more readable)
+  ggplot(aes(continent, lifeExp)) +
+  geom_boxplot()
 ```
 
 
@@ -257,11 +269,11 @@ What if we have two variables plus a non-positional categorical variable? Exampl
 
 ```{r}
 select_countries <- c("Sweden", "Denmark", "Norway", "Germany", "Austria")
-gap_select <- gapminder %>% 
+gap_select <- gapminder %>%  # df of just the 5 countries
   filter(country %in% select_countries) %>% 
-  droplevels()
+  droplevels() # drop unused levels
 ggplot(gap_select, aes(year, lifeExp)) +
-  geom_line(aes(group=country, colour=country))
+  geom_line(aes(group=country, colour=country)) # plot of life expectancy over time for thos 5 countries
 ```
 
 Use `fct_reorder2(f, x, y)` to reorder factor `f`:
@@ -271,7 +283,12 @@ Use `fct_reorder2(f, x, y)` to reorder factor `f`:
 
 Exercise: Reorder the above line graph so that the legend is in order of last life expectancy. Useful for black-and-white printing!
 
-```{r, fig.width=2, fig.height=1}
+```{r, fig.width=4, fig.height=2}
+ # fct_reorder2(f, x, y) looks at max x value and takes corresponding y-value. Reorders the countries according to the life expectancy at the very end.
+gap_select %>% 
+  mutate(country = fct_reorder2(country, year, lifeExp)) %>% 
+ggplot(aes(year, lifeExp)) +
+  geom_line(aes(colour=country)) # plot of life expectancy over time for thos 5 countries
 
 ```
 
@@ -286,9 +303,15 @@ Here's how to use `fct_relevel()` to do that. Exercise: modify the code so that:
 
 ```{r}
 gap_asia_2007$country %>% 
-  fct_relevel("Syria") %>% 
+  fct_relevel("Syria") %>% # releveling gap_asia_2007$country so that Syria goes first
   levels() %>% 
   head()
+
+gap_asia_2007$country %>% 
+  fct_relevel("Syria", "Sweden", after = 2) %>% # releveling gap_asia_2007$country so that Syria goes third (after 2) and Sweden goes 4th
+  levels() %>% 
+  head()
+
 ```
 
 ## Re-coding a Factor
