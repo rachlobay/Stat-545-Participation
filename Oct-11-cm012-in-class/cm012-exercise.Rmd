@@ -325,7 +325,7 @@ gap_big_north <- gapminder %>%
   filter(country %in% c("Canada", "United States", "Mexico")) %>% 
   droplevels()
 gap_big_north$country %>% 
-  fct_recode("USA" = "United States") %>% 
+  fct_recode("USA" = "United States") %>%  # renames United States to USA
   levels()
 ```
 
@@ -340,9 +340,9 @@ gap_2007 <- gapminder %>%
 
 We can arbitrarily combine levels using `fct_collapse()`. For example, combine Europe and Asia into one factor called "combo":
 
-```{r, fig.width=2, fig.height=1}
+```{r, fig.width=4, fig.height=2}
 cont %>% 
-  fct_collapse("combo" = c("Europe", "Asia")) %>% 
+  fct_collapse("combo" = c("Europe", "Asia")) %>% # combo factor instead of Europe and Asia
   qplot()
 ```
 
@@ -354,7 +354,14 @@ More practically, we can lump the least frequent levels together as "Other". Mod
 - Note: you can manually specify non-other levels using `fct_other()`.
 
 ```{r, fig.width=2, fig.height=1}
+cont %>% 
+  fct_lump() %>% # by default, combines all the continents so that total combined height of the other bar is the smallest bar
+  qplot()
 
+# keep top two frequent levels and lump everything else together in 1
+cont %>% 
+  fct_lump(n=2) %>% # by default, combines all the continents so that total combined height of the bar is less than least frequent other factor
+  qplot()
 ```
 
 We can use the `w` argument to lump by another variable.
