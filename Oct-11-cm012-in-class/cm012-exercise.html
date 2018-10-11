@@ -146,14 +146,19 @@ library(gapminder)</code></pre>
 </ul>
 <p>Examples of Base R’s obsession with coercing to factors:</p>
 <pre class="r"><code>data.frame(x=c(&quot;A&quot;, &quot;B&quot;)) %&gt;% 
-  str()</code></pre>
+  str() # column x is a factor</code></pre>
 <pre><code>## 'data.frame':    2 obs. of  1 variable:
 ##  $ x: Factor w/ 2 levels &quot;A&quot;,&quot;B&quot;: 1 2</code></pre>
 <pre class="r"><code>lotr1 &lt;- &quot;https://raw.githubusercontent.com/jennybc/lotr-tidy/master/data/The_Fellowship_Of_The_Ring.csv&quot; %&gt;% 
   read.csv()
 lotr2 &lt;- &quot;https://raw.githubusercontent.com/jennybc/lotr-tidy/master/data/The_Return_Of_The_King.csv&quot; %&gt;% 
   read.csv()
-str(lotr1)</code></pre>
+lotr1</code></pre>
+<pre><code>##                         Film   Race Female Male
+## 1 The Fellowship Of The Ring    Elf   1229  971
+## 2 The Fellowship Of The Ring Hobbit     14 3644
+## 3 The Fellowship Of The Ring    Man      0 1995</code></pre>
+<pre class="r"><code>str(lotr1)</code></pre>
 <pre><code>## 'data.frame':    3 obs. of  4 variables:
 ##  $ Film  : Factor w/ 1 level &quot;The Fellowship Of The Ring&quot;: 1 1 1
 ##  $ Race  : Factor w/ 3 levels &quot;Elf&quot;,&quot;Hobbit&quot;,..: 1 2 3

@@ -32,7 +32,7 @@ Examples of Base R's obsession with coercing to factors:
 
 ```r
 data.frame(x=c("A", "B")) %>% 
-  str()
+  str() # column x is a factor
 ```
 
 ```
@@ -47,6 +47,17 @@ lotr1 <- "https://raw.githubusercontent.com/jennybc/lotr-tidy/master/data/The_Fe
   read.csv()
 lotr2 <- "https://raw.githubusercontent.com/jennybc/lotr-tidy/master/data/The_Return_Of_The_King.csv" %>% 
   read.csv()
+lotr1
+```
+
+```
+##                         Film   Race Female Male
+## 1 The Fellowship Of The Ring    Elf   1229  971
+## 2 The Fellowship Of The Ring Hobbit     14 3644
+## 3 The Fellowship Of The Ring    Man      0 1995
+```
+
+```r
 str(lotr1)
 ```
 
