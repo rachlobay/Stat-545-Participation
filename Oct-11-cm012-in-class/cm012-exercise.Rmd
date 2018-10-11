@@ -48,12 +48,16 @@ str(lotr2)
 Examples of problems encountered with factors. (ideas came from [R Bloggers](https://www.r-bloggers.com/factors-are-not-first-class-citizens-in-r/))
 
 ```{r}
+head(iris)
 iris %>% 
-  mutate(Species = ifelse(Species == "versicolor", "vers", Species))
+  mutate(Species = ifelse(Species == "versicolor", "vers", Species)) %>% 
+  str() # R says no such level that is vers therefore it coerces it to a character vector
 ```
 
 ```{r}
-c(iris$Species, "setosa")
+c(iris$Species, "setosa") # again converts it into a character vector
+
+as.character(iris$Species) # do what we want it to do!
 ```
 
 
