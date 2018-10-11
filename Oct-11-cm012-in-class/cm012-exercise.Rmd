@@ -61,7 +61,7 @@ as.character(iris$Species) # do what we want it to do!
 ```
 
 
-- Base R way of interacting with factors:
+- Base R~~ way of interacting with factors:
     - `factor()`, or `forcats::parse_factor()`.
     - `levels()`
     - `nlevels()`
@@ -77,7 +77,14 @@ set.seed(10)
 Convert `draw` to a factor. What are the levels? How many are there? How many of each category was drawn?
 
 ```{r}
+draw <- factor(draw)
+draw
 
+levels(draw)
+nlevels(draw) %>% is.factor() # levels are not factors
+
+# nice factor levels and count tibble
+fct_count(draw)
 ```
 
 
@@ -97,7 +104,10 @@ Try binding by row `lotr1` and `lotr2`:
 Which one is more lenient? Which would you prefer?
 
 ```{r}
-
+rbind(lotr1, lotr2) %>% str() # film = factor w/2 levels (the film names)
+bind_rows(lotr1, lotr2) %>%  str() # abandaon factor thing and goes to character for film
+# if lotr1 and lotr2 had the same rows, then bind_rows would work as factor
+as.character(5)
 ```
 
 
@@ -106,8 +116,13 @@ Which one is more lenient? Which would you prefer?
 Levels don't always have to be present ("observed") in the factor. Example of what this means:
 
 ```{r}
-gap_gs <- gapminder %>% filter(country %in% c("Germany", "Sweden"))
+gap_gs <- gapminder %>% 
+  filter(country %in% c("Germany", "Sweden")) # filters to Germany and Sweden rows
+
+levels(gap_gs$country) # keeps all 142 countries
 nlevels(gap_gs$country)
+
+as.character(gap_gs$country) # only results in Germany and Sweden
 ```
 
 
@@ -125,7 +140,10 @@ gap_small <- gapminder %>%
 Exercise: Make a bar chart of the number of times a continent has a country with population < 250,000 in the `gapminder` data set. Try with and without `scale_x_discrete(drop=FALSE)`.
 
 ```{r}
-
+gap_small %>% 
+  ggplot(aes(x = continent)) +
+  geom_bar() + 
+  scale_x_discrete(drop = FALSE) # don't drop Americas and Oceania even though they never had a pop < 250,000
 ```
 
 __Example of when it's bad__: If you ever use the `levels()` function.
@@ -142,7 +160,14 @@ Exercise: get rid of the unused factor levels for country and continent in diffe
 - Re-defining the variable as a factor
 
 ```{r}
+gap_small %>% 
+  droplevels() %>% # if no observation in the column, then it drops the corresponding level
+  str() # continent only has levels Africa, Asia, and Europe and the countries of those guys
 
+gap_small %>% 
+  mutate(continent = fct_drop(continent)) %>% 
+  str() # only have the levels of Africa, Asia and Europe (other continents, Americas and Oceania, are dropped b/c no observations in the column corresponding to pop < 250,000)
+# still has 142 cuntries
 ```
 
 
@@ -158,7 +183,7 @@ levels(cont)
 Plotting happens in the order of the factor levels:
 
 ```{r, fig.width=2, fig.height=1}
-qplot(cont)
+qplot(cont) # alphabetical order by continent by default
 ```
 
 Much more effective to always consider a meaningful order when plotting a categorical variable. We'll look at three ways to re-order a factor. 
@@ -171,18 +196,31 @@ Reorder by frequency:
 - Reverse: `fct_rev()` 
 
 ```{r, fig.width=2, fig.height=1}
+# decreasing order of frequency
 cont %>% 
   fct_infreq() %>% 
+  qplot() 
+# increasing order of frequency
+cont %>% 
+  fct_infreq() %>% 
+  fct_rev() %>% 
   qplot()
 ```
 
 Could also arrange by the order they appear in the factor with `fct_inorder()`.
+
+```{r}
+draw %>% 
+  fct_inorder() # orders levels in order they appear in the factor
+```
+
 
 ### Ordering by Another Variable
 
 Here are the 2007 life expectancies of Asian countries:
 
 ```{r}
+# further to the right means higher life expectancy
 gap_asia_2007 <- gapminder %>% 
   filter(year == 2007, continent == "Asia")
 ggplot(gap_asia_2007, aes(lifeExp, country)) + geom_point()
@@ -190,8 +228,11 @@ ggplot(gap_asia_2007, aes(lifeExp, country)) + geom_point()
 
 Let's use `fct_reorder()` to reorder the countries of `gap_asia_2007` by life Expectancy, and produce the same plot:
 
-```{r, fig.width=2, fig.height=1}
-
+```{r, fig.width=4, fig.height=2}
+gap_asia_2007 %>% 
+  mutate(country = fct_reorder(country, lifeExp)) %>% # reorder countries by life Expectancy (more readable)
+  ggplot(aes(lifeExp, country)) + geom_point() + 
+  geom_point()
 ```
 
 What about when life Expectancy is not unique? Example: life expectancy of each continent:
