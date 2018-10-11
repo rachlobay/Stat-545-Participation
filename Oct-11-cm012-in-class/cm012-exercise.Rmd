@@ -419,7 +419,8 @@ Goal here: some exposure to `lubridate`; know it exists.
 1. Use different combinations of y, m, d to make a date time object.
 
 ```{r}
-
+lubridate::ymd(170511)
+lubridate::ymd("2017-May-11")
 ```
 
 2. Get `year`, `month`, `yday`, `wday`, `day`.
