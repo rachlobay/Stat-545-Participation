@@ -79,11 +79,11 @@ p_scales +
 RColorBrewer::display.brewer.all()
 p_scales +
     scale_x_log10(labels=dollar_format()) +
-    FILL_IN_WITH_RCOLORBREWER(
+    scale_colour_distiller( scale_
         trans   = "log10",
         breaks  = 10^(1:10),
         labels  = comma_format(),
-        palette = FILL_THIS_IN
+        palette = "Greens"
     ) +
     scale_y_continuous(breaks=10*(1:10))
 ```
@@ -95,11 +95,10 @@ p_scales +
 ```{r}
 p_scales +
     scale_x_log10(labels=dollar_format()) +
-    FILL_IN_WITH_RCOLORBREWER(
+    scale_color_viridis_c(
         trans   = "log10",
         breaks  = 10^(1:10),
-        labels  = comma_format(),
-        palette = FILL_THIS_IN
+        labels  = comma_format()
     ) +
     scale_y_continuous(breaks=10*(1:10))
 ```
@@ -118,7 +117,8 @@ ggplot(iris, aes(Sepal.Width, Sepal.Length)) +
      geom_point() +
      labs(x = "Sepal Width",
           y = "Sepal Length",
-          title = "Sepal sizes of three plant species")
+          title = "Sepal sizes of three plant species") +
+  theme_bw()
 ```
 
 2. Then, change font size of axis labels, and the strip background colour. Others?
@@ -131,8 +131,9 @@ ggplot(iris, aes(Sepal.Width, Sepal.Length)) +
           y = "Sepal Length",
           title = "Sepal sizes of three plant species") +
     theme_bw() +
-    theme(FILL_IN_ARG_FOR_AXIS_TITLE = FILL_THIS_IN,
-          strip.background = FILL_THIS_IN)
+    theme(axis.text = element_text(size = 16), # want to modify text, therefore use element_text function
+          strip.background = element_rect(fill = "orange"),
+          panel.background = element_rect(fill = "blue")) # element_rect() b/c rectangle
 ```
 
 
@@ -160,7 +161,8 @@ Consider the following plot:
 1. Convert it to a `plotly` object by applying the `ggplotly()` function:
 
 ```{r}
-FILL_THIS_IN
+library(plotly)
+ggplotly(p)
 ```
 
 2. You can save a plotly graph locally as an html file. Try saving the above:
@@ -201,7 +203,7 @@ plot_ly(gapminder,
 plot_ly(gapminder, 
         x = ~gdpPercap, 
         y = ~lifeExp, 
-        z = FILL_THIS_IN,
+        z = ~pop,
         type = "scatter3d",
         mode = "markers",
         opacity = 0.2)
