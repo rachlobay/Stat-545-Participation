@@ -62,11 +62,11 @@ p_scales +
 ```{r}
 library(scales)
 p_scales +
-    scale_x_log10(labels=FILL_THIS_IN) +
+    scale_x_log10(labels=dollar_format()) +
     scale_colour_continuous(
         trans  = "log10", 
         breaks = 10^(1:10),
-        labels = FILL_THIS_IN
+        labels = comma_format()
     ) +
     scale_y_continuous(breaks=10*(1:10))
 ```
