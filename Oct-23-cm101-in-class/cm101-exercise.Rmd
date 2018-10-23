@@ -233,13 +233,13 @@ qd2 <- function(x, probs=c(0,1)) {
 There are other arguments to `quantile`, like `type`, that are not used all that much. Put them in as ellipses:
 
 ```{r}
-qd2 <- function(x, probs=c(0,1), na.rm=FALSE, FILL_THIS_IN) {
+qd2 <- function(x, probs=c(0,1), na.rm=FALSE, ...) {
     stopifnot(is.numeric(x))
     if (length(x) == 0) {
         warning("You inputted a length-0 x. Expecting length >=1. Returning NULL.")
         return(NULL)
     } 
-    qvec <- quantile(x, probs, na.rm = na.rm, FILL_THIS_IN)
+    qvec <- quantile(x, probs, na.rm = na.rm, ...)
     max(qvec) - min(qvec)
 }
 ```
