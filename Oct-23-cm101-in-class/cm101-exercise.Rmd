@@ -242,4 +242,7 @@ qd2 <- function(x, probs=c(0,1), na.rm=FALSE, ...) {
     qvec <- quantile(x, probs, na.rm = na.rm, ...)
     max(qvec) - min(qvec)
 }
+
+v <- rnorm(100)
+qd2(v, probs=c(0,1), na.rm=FALSE, type = 1) # assume 1 corresponds to probs
 ```
