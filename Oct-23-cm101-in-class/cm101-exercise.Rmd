@@ -18,7 +18,13 @@ This worksheet is a condensed version of Jenny's stat545.com functions [part1](h
 Let's demo the syntax of function-making.
 
 ```{r}
+square <- function(x) {
+  y <- x^2
+  return(y)
+  5
+}
 
+square(10)
 ```
 
 ## Motivating example: max minus min.
@@ -34,7 +40,11 @@ max(gapminder$lifeExp) - min(gapminder$lifeExp)
 Exercise: turn this into a function! i.e., write a function that returns the max minus min of a vector. Try it out on the gapminder variables.
 
 ```{r}
-max_minus_min <- FILL_THIS_IN
+max_minus_min <- function(x) {
+  max(x) - min(x)
+}
+
+max_minus_min(gapminder$lifeExp)
 ```
 
 We'll be building on this. Development philosophy [widely attributed to the Spotify development team](http://blog.fastmonkeys.com/?utm_content=bufferc2d6e&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer):
@@ -49,14 +59,16 @@ Check your function using your own eyeballs:
 - Apply to a random uniform vector. Do you get meaningful results?
 
 ```{r}
+max_minus_min(1:10)
 
+max_minus_min(runif(100)) # generating a bunch of numbers close to 100
 ```
 
 Let's formalize this testing with the `testthat` package. `expect_*()` functions:
 
 ```{r}
 expect_equal(0.1 + 0.2, 0.3)
-expect_identical(0.1 + 0.2, 0.3)
+expect_identical(0.1 + 0.2, 0.3) # not identical because floating point error
 ```
 
 Add another check to the following unit test, based on the uniform random numbers:
