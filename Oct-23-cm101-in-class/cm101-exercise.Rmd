@@ -130,7 +130,7 @@ mmm1("hello")
 ```{r}
 mmm2 <- function(x) {
     if (!is.numeric(x)) {
-        FILL_THIS_IN
+        stop(paste("Expecting x to be numeric. You gave me ", typeof(x)))
     }
     max(x) - min(x)
 }
@@ -145,7 +145,7 @@ mmm1(gapminder$country)
 mmm1(gapminder[c('lifeExp', 'gdpPercap', 'pop')])
 mmm1(c(TRUE, TRUE, FALSE, TRUE, TRUE))
 
-mm2((numeric(0)))
+mmm2((numeric(0)))
 mmm2(gapminder)
 mmm2(gapminder$country)
 mmm2(gapminder[c('lifeExp', 'gdpPercap', 'pop')])
@@ -153,6 +153,12 @@ mmm2(c(TRUE, TRUE, FALSE, TRUE, TRUE))
 ```
 
 ## Naming, and generalizing to quantile difference
+
+```{r}
+x <- 1:10
+mmm2(x)
+```
+
 
 Let's generalize the function to take the difference in two quantiles:
 
@@ -174,7 +180,7 @@ Try it out:
 x <- runif(100)
 qd(x, c(0.25, 0.75))
 IQR(x)
-qd(x, c(0,1))
+qd(x, c(0,1)) # max - min numbers
 mmm2(x)
 ```
 
@@ -187,7 +193,8 @@ If we input a vector stored in some variable, need that variable be named `x`?
 Would be nice to have defaults for `probs`, right? Add them to the below code (which is copied and pasted from above):
 
 ```{r}
-qd2 <- function(x, probs) {
+# by default, qd2 takes probs argument to be a vector of 0,1 (max-min)
+qd2 <- function(x, probs=c(0,1)) {
     stopifnot(is.numeric(x))
     if (length(x) == 0) {
         warning("You inputted a length-0 x. Expecting length >=1. Returning NULL.")
