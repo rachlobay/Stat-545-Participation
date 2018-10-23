@@ -76,8 +76,9 @@ Add another check to the following unit test, based on the uniform random number
 ```{r}
 test_that("Simple cases work", {
     expect_equal(max_minus_min(1:10), 9)
-    FILL_THIS_IN
-})
+    expect_lt(max_minus_min(runif(100)),1) # Is returned value less than 1?
+}
+)
 ```
 
 ## Try and break your function
@@ -93,7 +94,7 @@ max_minus_min(gapminder$country)
 These don't break!
 
 ```{r}
-max_minus_min(gapminder[c('lifeExp', 'gdpPercap', 'pop')])
+max_minus_min(gapminder[c('lifeExp', 'gdpPercap', 'pop')]) # taking max - min of all possible values in data frame
 max_minus_min(c(TRUE, TRUE, FALSE, TRUE, TRUE))
 ```
 
@@ -115,9 +116,11 @@ Your turn:  Use two methods:
 
 ```{r}
 mmm1 <- function(x) {
-    FILL_THIS_IN
+    stopifnot(!is.numeric(x)) # if not numeric, stop
     max(x) - min(x)
 }
+
+mmm1("hello")
 ```
 
 2. Using `stop` and an `if` statement, Modify the max-min function to:
