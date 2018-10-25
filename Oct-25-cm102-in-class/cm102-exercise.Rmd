@@ -288,21 +288,24 @@ See list at https://r4ds.had.co.nz/strings.html#repetition
 Find all countries that have any number of o's (but at least 1) following r:
 
 ```{r}
-str_view_all_match(countries, "re+")
+(str_view_all_match(countries, "ro+"))
 ```
 
 
 Find all countries that have exactly two e's next two each other:
 
 ```{r}
-str_view_all_match(countries, "e{2}")
+str_view_all_match(countries, "e{2}") # two e next to each other
 ```
 
 
 Exercise: Find all countries that have either "a" or "e", twice in a row (with a changeover allowed, such as "ae" or "ea"):
 
 ```{r}
-str_view_all_match(countries, pattern="YOUR_REGEX_HERE")
+str_view_all_match(countries, pattern="(a|e)(a|e)")
+
+# not being resolved before repeating (ie. just looking for (a|e) two times)
+str_view_all_match(countries, pattern="(a|e){2}")
 ```
 
 
@@ -314,8 +317,8 @@ str_view_all_match(countries, pattern="YOUR_REGEX_HERE")
 Countries that end in "land":
 
 ```{r}
-str_view_all_match(countries, pattern = "land$")
-str_view_all_match(countries, pattern = "$")
+str_view_all_match(countries, pattern = "land$") # with land at end
+str_view_all_match(countries, pattern = "$") # gives all the countries and finds the very end of each line
 ```
 
 Countries that start with "Ca":
@@ -327,7 +330,8 @@ str_view_all_match(countries, pattern = "^Ca")
 Countries without a vowel? The word should start with a non-vowel, continue as a non-vowel, and end:
 
 ```{r}
-str_view_all_match(countries, "^[^aeiouAEIOU]*$")
+str_view_all_match(countries, "^[^aeiouAEIOU]*$") # a country that contains entirely non-vowels
+# asterisk means give me 0 or more of the thing before it (ie. 0 or more non vowels)
 ```
 
 ### Groups
@@ -335,8 +339,8 @@ str_view_all_match(countries, "^[^aeiouAEIOU]*$")
 We can refer to parentheses groups:
 
 ```{r}
-str_view_all(c("abad", "abbd"), pattern="(a)(b)\\1")
-str_view_all(c("abad", "abbd"), pattern="(a)(b)\\2")
+str_view_all(c("abad", "abbd"), pattern="(a)(b)\\1") 
+str_view_all(c("abad", "abbd"), pattern="(a)(b)\\2") # want a second group, a followed by b, followed by whatever the second group was resolved to (which was b)
 ```
 
 Note that the parentheses are first resolved, THEN referred to. NOT re-executed.
@@ -348,7 +352,7 @@ str_view_all(c("bananas"), "(.)(.)\\1\\2.*\\1\\2")
 We can refer to them later in the search, too:
 
 ```{r}
-str_view_all(c("bananas", "Who can? Bananas can."), "(.)(.)\\1\\2.*\\1\\2")
+str_view_all(c("bananas", "Who can? Bananas can."), "(.)(.)\\1\\2.*\\1\\2") # gives you anything followed by anything, and then gives the first group followed by the second group .* = any # of anything, followed by whatever group 1 was resolved to and what group 2 was resolved to.
 ```
 
 
