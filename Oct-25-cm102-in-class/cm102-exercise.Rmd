@@ -55,7 +55,7 @@ Exercise: does this sentence contain all letters of the alphabet? Hints:
 ```{r}
 fox %>% 
   str_split("") %>% # splits into individual characters
-  `[[`(1) %>% # no [[1]], putting into class caracter instead of class list
+  `[[`(1) %>% # extracting 1st element of list, so we are looking at the characters
   str_to_lower() %>% 
   table()
 ```
@@ -129,22 +129,23 @@ Let's make those folders!
 1. Make a character vector with entries `"01"`, `"02"`, ..., `12` with `str_pad()`.
 
 ```{r}
-(num <- str_pad(FILL_THIS_IN))
+# pad vector of 1:12 so that it hs a width of at least 2, on left side pad, pad with 0
+(num <- str_pad(1:12, width = 2, side = "left", pad= "0"))
 ```
 
-2. Use `str_c()` to combine `"cm1"` with the numbers:
+2. Use `str_c()` to combine `"/cm1"` with the numbers:
     - If your system uses "\" instead of "/", you might need two backslashes.
 
 ```{r}
-(folders <- str_c(FILL_THIS_IN))
+(folders <- str_c("/cm1",num))
 ```
 
-3. Use `testthat` to check that each entry of `folders` has 5 characters. You might find the base R `all()` function useful.
+3. Use `testthat` to check that each entry of `folders` has 6 characters. You might find the base R `all()` function useful.
 
 ```{r}
-test_that("folder names are length 5.", {
-    expect_FILL_THIS_IN()
-})
+(test_that("folder names are length 5.", {
+    expect_true(all(str_length(folders) ==  6))
+}))
 ```
 
 4. BONUS: If applicable, make the folders using `dir.create()`.
@@ -159,14 +160,15 @@ Now, let's seed the folders with README's.
 1. Add `/README.md` to the end of the folder names stored in `folders`:
 
 ```{r}
-files <- FILL_THIS_IN
+(files <- str_c(folders, "/README.md"))
 ```
 
 2. Make a vector of contents to put in each README. Put a title and body. 
     - Hint: Use `\n` to indicate a new line! This works in graphs, too.
     
 ```{r}
-contents <- FILL_THIS_IN
+contents <- str_c("# Participation\n\n Participation for class meeting ", 1:12)
+cat(contents[1]) # What first entry looks like after being rendered by R
 ```
 
 3. BONUS: Write the README's to file using base R's `write(x, file)`:
@@ -206,15 +208,15 @@ But, where's Italy? Case-sensitive!
 Let's use `str_view_all()` to see the matches:
 
 ```{r}
-str_view_all(countries, pattern = "i.a")
-str_view_all(countries, pattern = "i.a", match=TRUE)
+str_view_all(countries, pattern = "i.a") # all countries
+str_view_all(countries, pattern = "i.a", match=TRUE) # Shows only strings that have the pattern
 ```
 
 Exercise: Canada isn't the only country with three interspersed "a"'s. Find the others. Try both `str_view_all()` and `str_subset()`.
 
 ```{r}
-str_view_all(FILL_THIS_IN)
-str_subset(FILL_THIS_IN)
+str_view_all(countries, pattern = ".a.a.a", match = TRUE)
+str_subset(countries, pattern = ".a.a.a") # gives us vector of Canada, Madagascar and Panama
 ```
 
 
@@ -255,7 +257,7 @@ Note that not all special characters "work" within `[]`, but some do, and do not
 Exercise: Find all countries with three non-vowels next to each other.
 
 ```{r}
-str_view_all_match(countries, pattern = "YOUR_REGEX_HERE")
+str_view_all_match(countries, pattern = "[^aeiou][^aeiou][^aeiou]")
 ```
 
 
