@@ -31,25 +31,33 @@ There's that famous sentence about the quick brown fox that contains all letters
 `str_subset(string, pattern)`
 
 ```{r}
-fox <- str_subset(FILL_THIS_IN, FILL_THIS_IN)
+(fox <- str_subset(sentences, pattern="fox"))
 ```
 
 Not quite the sentence I was thinking of. How many words does it contain? Use `str_split(string, pattern)`, noting its output (list).
 
 ```{r}
-str_split(FILL_THIS_IN, FILL_THIS_IN)
+str_split(fox, pattern=" ") # " " separates by word, whereas "" separates by character
+str_split(sentences, pattern=" ") %>% 
+  head()
+
+str_split(fox, pattern=" ")[[1]] %>% 
+  length() # 8 words
+
 ```
 
 Exercise: does this sentence contain all letters of the alphabet? Hints: 
 
-- Split by `""`. 
+- Split by `""`.  # split into all individual characters
 - Consider putting all in lowercase with `str_to_lower()`.
 - Use the base R `table()` function.
 
 ```{r}
 fox %>% 
-  str_split(FILL_THIS_IN) %>% 
-  FILL_THIS_IN
+  str_split("") %>% # splits into individual characters
+  `[[`(1) %>% # no [[1]], putting into class caracter instead of class list
+  str_to_lower() %>% 
+  table()
 ```
 
 
@@ -65,7 +73,7 @@ Demo: we can substitute, too. Replace the word "fox" with "giraffe" using `str_r
 
 ```{r}
 fox %>% 
-    str_replace(FILL_THIS_IN)
+    str_replace(pattern = "fox", replacement = "giraffe")
 ```
 
 Know the position you want to extract/replace? Try `str_sub()`.
@@ -74,6 +82,7 @@ Know the position you want to extract/replace? Try `str_sub()`.
 
 ```{r}
 fruit %>% head
+
 fruit %>% 
     str_pad(width=7, side="right", pad="$") %>% 
     head()
@@ -82,8 +91,8 @@ fruit %>%
 `str_length()` (Not the same as `length()`!)
 
 ```{r}
-str_length(fruit)
-length(fruit)
+str_length(fruit) # how many characters for every entry in character vector (ex. apple = 5 characters)
+length(fruit) # 80 entries (fruits) in this vector
 ```
 
 
@@ -92,16 +101,16 @@ length(fruit)
 ```{r}
 str_c(words[1:4], words[5:8], sep=" & ")
 str_c(words[3:4], words[5:8], sep=" & ")
-str_c(words[3:4], words[5:8], sep=" & ", collapse=", ")
+str_c(words[3:4], words[5:8], sep=" & ", collapse=", ") # vector of length 1 with all individual characters pasted together
 ```
 
 There's a (more limited) `tidyr` version. Straight from Resource 1:
 
 ```{r}
-fruit_df <- tibble(
+(fruit_df <- tibble(
   fruit1 = fruit[1:4],
   fruit2 = fruit[5:8]
-)
+))
 fruit_df %>% 
   unite("flavor_combo", fruit1, fruit2, sep = " & ")
 ```
