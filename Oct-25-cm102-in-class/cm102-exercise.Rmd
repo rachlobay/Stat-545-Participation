@@ -368,7 +368,16 @@ Convert `words` to pig latin, which involves:
     - Use `str_c()`.
     
 ```{r}
-YOUR_CODE_HERE
+str <- "words"
+
+# Make first letter the last letter
+first_let <- str_sub(str,1,1)
+after_first_let <- str_sub(string,start=2) # Remove the first letter from `words`
+new_str <- str_c(after_first_let, first_let, sep="")
+
+# Add "ay" to the end of the word.
+str_c(new_str, "ay")
+
 ```
 
 Find all countries that end in "y"

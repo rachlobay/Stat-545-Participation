@@ -168,6 +168,7 @@ map_chr(wesanderson, head, n = 1) # n if positive or zero, size for the resultin
 
 # Method 3:
 map_chr(wesanderson, `[`, 1)  # subsetting wesanderson to the first element
+# x[1] is interchangable with `[`(x,1)
 ```
 
 2. Check that each character's list entry in `got_chars` has the same names as everyone else (that is, list component names, not character names). Here's one way to do it:
@@ -188,7 +189,8 @@ We can do the subsetting much easier with these shortcuts: just replace function
 - name you'd like to subset by.
 
 ```{r}
-map_chr(wesanderson, 1) # %>% unname()
+# subsetting by index 1
+map_chr(wesanderson, 1) # %>% unname() # unname() means names of function will dissappear
 ```
 
 
@@ -197,13 +199,17 @@ map_chr(wesanderson, 1) # %>% unname()
 1. For the `got_chars` data:
 
 - What are the titles of each character? 
-- Is a vector output appropriate here?
+- Is a vector output appropriate here? NO! because we don't know how long each component is going to be.
 - Use a pipe.
 
 Note: each character's list entry has a component named `titles` as the 9th entry.
 
 ```{r}
-YOUR_CODE_HERE
+got_chars %>% 
+  map("titles")
+
+got_chars %>% 
+  map(9)
 ```
 
 2. For the `got_chars` data:
