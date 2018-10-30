@@ -220,24 +220,35 @@ got_chars %>%
 
 ```{r}
 desired_info <- c("name", "born")
+map(got_chars, `[`, desired_info) %>% head() # ea person only has a list with 2 components "name" and "born"
+
+map_dfr(got_chars, `[`, desired_info) # data frame where ea person has their own row
 ```
 
 Note: as Jenny says, it's always safer (from a programming perspective) to work with output that's more predictable. The following would be safer, and is still readable:
 
 ```{r}
 got_chars %>% {
-    tibble(
-        name = map_chr(., "name"),
+    tibble( # tibble function allows us to manually construct a df
+        name = map_chr(., "name"), # . refers to entire got_chars data # subsetting to name and converting to character vector. Results in character vector of names
         born = map_chr(., "born")
     )
 }
+
+# not what we want
+got_chars %>% 
+    tibble( # tibble function allows us to manually construct a df
+        name = map_chr(., "name"), # . refers to entire got_chars data # subsetting to name and converting to character vector. Results in character vector of names
+        born = map_chr(., "born")
+    )
+
 ```
 
 Note the curly braces "tricks" the object prior to the pipe from entering as the first argument to `tibble`, because ` ``{`` ` only returns the last line evaluated. In this case there are two: the above code is equivalent to
 
 ```{r}
 got_chars %>% {
-    .
+    . # putting got_chars as first line of {
     tibble(
         name = map_chr(., "name"),
         born = map_chr(., "born")
