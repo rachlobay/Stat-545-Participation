@@ -49,7 +49,7 @@ Examples:
 ```
 
 ```{r}
-(1:10) * (1:2)
+(1:10) * (1:2) # recycling: shorter vector is recycled so that it is of equal length (ie. 1, 2, 1, 2, 1, 2)
 ```
 
 ```{r}
@@ -70,7 +70,15 @@ Example:
 2. Use what you know about R to write code that extracts a vector of the first elements of each vector contained in `wesanderson`.
 
 ```{r}
-YOUR_CODE_HERE
+str(wesanderson)
+
+
+x <- character(0) # initiated a character vector of length 0 
+
+for(i in 1:length(wesanderson)){
+  x[i] <- wesanderson[[i]][1] # ith component of wesanderson and we want the 1st element of that component
+}
+x
 ```
 
 `str()` is not always useful! Try checking the structure of `got_chars` (= Game of Thrones characters):
@@ -85,7 +93,11 @@ str(got_chars)
 1. `str()`: embrace `list.len` and `max.level`
 
 ```{r}
-str(got_chars)
+str(got_chars, list.len=4, max.level=1) # only shows the 1st 4 of the list
+# max.level = 1 to view 1st level of list (the people)
+# max.level = 2 to view sublists (info. of ppl)
+
+str(got_chars[[1]])
 ```
 
 2. Interactive exploration: `View()` and `listviewer::jsonedit(..., mode = "view")`
@@ -118,25 +130,26 @@ Toy example 1: without using vectorization, take the square root of the followin
 
 ```{r}
 x <- 1:10
-map(FILL_THIS_IN, FILL_THIS_IN)
+map(x,sqrt)
 ```
 
 Toy example 2 (functions on-the-fly): without using vectorization, square each component of `x`:
 
 ```{r}
-map(FILL_THIS_IN, FILL_THIS_IN)
+map(x, function(y){y = y^2})
 ```
 
 Want a vector to be returned? Must specify the `typeof()` of the vector. Use `map_dbl()` to specify an output vector of type "double" for the above (check out the documentation `?map` for the acceptable vector types):
 
 ```{r}
 map_dbl(x, sqrt)
+map_chr(x, sqrt)
 ```
 
 Does your function have other arguments? You can specify them afterwards in the ellipses (`...`).
 
 ```{r}
-map_chr(x, str_c, "potato.", sep="-")
+map_chr(x, str_c, "potato.", sep="-") # specified other arguments "potato." and sep="-"
 ```
 
 ## Your Turn: `purrr` fundamentals
@@ -147,7 +160,14 @@ map_chr(x, str_c, "potato.", sep="-")
     - Use the ` ``[`` ` function if you're feeling daring.
 
 ```{r}
-YOUR_CODE_HERE
+# Method 1: define function
+map_chr(wesanderson, function(x){ x = x[1] }) # use map_chr because we want vector not list
+
+# Method 2: head
+map_chr(wesanderson, head, n = 1) # n if positive or zero, size for the resulting object: number of elements for a vector (including lists)
+
+# Method 3:
+map_chr(wesanderson, `[`, 1)  # subsetting wesanderson to the first element
 ```
 
 2. Check that each character's list entry in `got_chars` has the same names as everyone else (that is, list component names, not character names). Here's one way to do it:
