@@ -34,9 +34,11 @@ Want to vectorize over two iterables? Use the `map2` family:
 ```{r}
 a <- c(1,2,3)
 b <- c(4,5,6)
-map2(a, b, function(x, y) x*y)
+map2(a, b, function(x, y) x*y) # output of map2 is a list
 ```
 ```{r}
+# Can use tilde as function(.x)
+
 map2(a, b, ~ .x * .y)
 ```
 ```{r}
@@ -55,10 +57,10 @@ c <- c(7,8,9)
 pmap(list(a, b, c), function(x, y, z) x*y*z)
 ```
 ```{r}
-pmap(list(a, b, c), ~ ..1 * ..2 * ..3)
+pmap(list(a, b, c), ~ ..1 * ..2 * ..3) # .. allows us to have any number of arguments specified.
 ```
 ```{r}
-pmap_dbl(list(a, b, c), ~ ..1 * ..2 * ..3)
+pmap_dbl(list(a, b, c), ~ ..1 * ..2 * ..3) # pmap expects ..1, ..2, etc.
 ```
 
 ## Your Turn
@@ -79,20 +81,22 @@ str_c(name, " takes ", commute, " minutes to get to work.")
 1. By defining a function before feeding it into `map2()` -- call it `comm_fun`.
 
 ```{r}
-comm_fun <- FILL_THIS_IN
-map2(FILL_THIS_IN, FILL_THIS_IN, FILL_THIS_IN)
+comm_fun <- function(t, s)  
+  str_c(t, " takes ", s, " minutes to get to work.")
+
+map2_chr(name, commute, comm_fun)
 ```
 
 2. By defining a function "on the fly" within the `map2()` function.
 
 ```{r}
-map2(name, commute, function(t, s) FILL_THIS_IN)
+map2_chr(name, commute, function(t, s) { str_c(t, " takes ", s, " minutes to get to work.")})
 ```
 
 3. By defining a formula.
 
 ```{r}
-map2(name, commute, ~ FILL_THIS_IN)
+map2(name, commute, ~ str_c(.x, " takes ", .y, " minutes to get to work."))
 ```
 
 
@@ -132,7 +136,14 @@ This is where `map()` comes in handy! Let's make a tibble using the `got_chars` 
 2. Specify the columns with `purrr` mappings.
 
 ```{r}
-got_alias <- got_chars %>% FILL_THIS_IN
+# curly braces so don't put got_chars in 1st parameter of tibble
+got_alias <- got_chars %>% {
+  tibble(
+    name = map_chr(., "name"), # use . because we want the names of ALL the characters
+    aliases = map(., "aliases")
+  )
+}
+got_alias
 ```
 
 Write the solution down carefully -- we'll be referring to `got_alias` later. 
