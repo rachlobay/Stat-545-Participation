@@ -159,9 +159,10 @@ Approach 1: Without piping
 3. Subset the newly-named list to Melisandre.
 
 ```{r}
-(alias_list <- FILL_THIS_IN)
-names(alias_list) <- FILL_THIS_IN
-SUBSET_HERE
+(alias_list <- got_alias$aliases)
+names(alias_list) <- got_alias$name
+alias_list
+alias_list[["Melisandre"]]
 ```
 
 Approach 2: With piping
@@ -170,7 +171,9 @@ Approach 2: With piping
 2. Then, pipe that into a subsetting function to subset Melisandre.
 
 ```{r}
-got_alias %>% FILL_THIS_IN
+got_alias %>% 
+  {setNames(.$aliases, .$name)} %>% # returns vector with names of aliases and name
+  `[[`("Melisandre") # like putting [["Mellisandre"]]
 ```
 
 ## Nesting/Unnesting; Operating
@@ -178,8 +181,9 @@ got_alias %>% FILL_THIS_IN
 __Question__: What would tidy data of `got_alias` look like? Remember what `got_alias` holds:
 
 ```{r}
-got_alias
+got_alias 
 ```
+
 
 Let's make a tidy data frame! First, let's take a closer look at `tidyr::unnest()` after making a tibble of preferred ice cream flavours:
 
@@ -213,7 +217,8 @@ From list-column data:
 
 ```{r}
 icecream %>% 
-  filter(map_lgl(flav, ~ FILL_THIS_IN))
+  filter(map_lgl(flav, ~ any( .x == "strawberry"))) # subsets list-column to all people who like strawberry, but preserves list-column
+# .x is a vector of icecream flavors
 ```
 
 
