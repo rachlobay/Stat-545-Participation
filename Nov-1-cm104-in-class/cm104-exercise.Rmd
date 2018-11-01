@@ -227,7 +227,12 @@ icecream %>%
 `unnest()` the `got_alias` tibble. Hint: there should be a hiccup. Check out the `str()`ucture of `got_alias` -- are all elements of the list column vectors? Would using `tidyr::drop_na()` be a good idea here?
 
 ```{r}
-FILL_THIS_IN
+# not all elements of the list column are vectors because we have NULL
+str(got_alias)
+
+got_alias %>% 
+  drop_na() %>% 
+  unnest()
 ```
 
 We can also do the opposite with `tidyr::nest()`. Try it with the `iris` data frame:
@@ -236,7 +241,9 @@ We can also do the opposite with `tidyr::nest()`. Try it with the `iris` data fr
 2. `nest()`!
 
 ```{r}
-FILL_THIS_IN
+iris %>% 
+  group_by(Species) %>% 
+  nest() # for each group, compressed it into part of a data frame and put that into a list-column
 ```
 
 Keep the nested `iris` data frame above going! Keep piping:
