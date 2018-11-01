@@ -243,7 +243,7 @@ We can also do the opposite with `tidyr::nest()`. Try it with the `iris` data fr
 ```{r}
 iris %>% 
   group_by(Species) %>% 
-  nest() # for each group, compressed it into part of a data frame and put that into a list-column
+  nest() # for each group, compressed it into a data frame and put that into a list-column
 ```
 
 Keep the nested `iris` data frame above going! Keep piping:
