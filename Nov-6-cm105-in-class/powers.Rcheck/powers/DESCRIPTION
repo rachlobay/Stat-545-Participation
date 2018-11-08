@@ -1,0 +1,24 @@
+Package: powers
+Type: Package
+Title: Apply powers to your vectors
+Version: 0.1.0
+Authors@R: c(person("Joe", "Developer", role = c("aut", "cre"),
+                     email = "Joe.Developer@some.domain.net"),
+              person("Pat", "Developer", role = "aut"),
+              person("A.", "User", role = "ctb",
+                     email = "A.User@whereever.net"))
+Description: More about what it does (maybe more than one line)
+    Use four spaces when indenting paragraphs within the Description.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.0
+Suggests: testthat, knitr, rmarkdown
+VignetteBuilder: knitr
+NeedsCompilation: no
+Packaged: 2018-11-08 18:21:05 UTC; admin
+Author: Joe Developer [aut, cre],
+  Pat Developer [aut],
+  A. User [ctb]
+Maintainer: Joe Developer <Joe.Developer@some.domain.net>
+Built: R 3.5.1; ; 2018-11-08 18:33:10 UTC; unix
