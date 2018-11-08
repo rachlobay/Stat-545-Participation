@@ -1,0 +1,44 @@
+
+R version 3.5.1 (2018-07-02) -- "Feather Spray"
+Copyright (C) 2018 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin15.6.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> library(testthat)
+> library(powers)
+> 
+> test_check("powers")
+[31m──[39m [31m1. Error: At least numeric values work. (@test_squar[39m
+could not find function "expect_identitcal"
+1: .handleSimpleError(function (e) 
+   {
+       handled <<- TRUE
+       test_error <<- e
+       options(expressions = expressions_opt_new)
+       on.exit(options(expressions = expressions_opt), add = TRUE)
+       e$expectation_calls <- frame_calls(11, 2)
+       test_error <<- e
+       register_expectation(e)
+       e$handled <- TRUE
+       test_error <<- e
+   }, "could not find function \"expect_identitcal\"", quote(expect_identitcal(square(1:3), 
+       c(1, 4, 9)))) at testthat/test_square.R:6
+2: eval(code, test_env)
+
+══ testthat results  ══════════════════════════════════
+OK: 2 SKIPPED: 0 FAILED: 1
+1. Error: At least numeric values work. (@test_square.R#6) 
+
+Error: testthat unit tests failed
+Execution halted
