@@ -3,7 +3,7 @@ context("Squaring non-numerics")
 test_that("At least numeric values work.", {
   num_vec <- c(0, -4.6, 3.4)
   expect_identical(square(numeric(0)), numeric(0)) # check that the first argument is identical to the 2nd argument
-  expect_identitcal(square(1:3), c(1, 4, 9))
+  expect_identical(square(1:3), c(1, 4, 9))
 })
 
 test_that("Logicals automatically convert to numeric.", {
