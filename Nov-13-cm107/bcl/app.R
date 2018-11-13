@@ -9,10 +9,30 @@
 
 library(shiny)
 
+# Anything before UI will be run too!
+a <- 5
+print(a^2)
+
+
 # UI (User Interface) output of fluid page function 
 # Define UI for application that draws a histogram
 ui <- fluidPage(
+  "This is some text",
+  p("This is more text."),
+  # h1 is level 1 header
+  tags$h1("Level 1 header"),
+  h1(em("Level 1 header")),
+  HTML("<h1>Level 1 header, part 3 </h1>"),
+  "Some text following a break",
+  code("This text will be displayed as computer code."),
+  br(),
+  a(href="www.rstudio.com", "Click here!"),
+  br(),
+  print(a)
 )
+  
+
+
 
 # Server function is a function of input and output
 # Define server logic required to draw a histogram
