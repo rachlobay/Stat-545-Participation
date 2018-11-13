@@ -6,8 +6,7 @@
 \alias{powers-package}
 \title{powers: Apply powers to your vectors}
 \description{
-More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+RACHEL CATHERINE
 }
 \details{
 Details go here.
