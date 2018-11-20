@@ -8,6 +8,7 @@
 #
 
 library(shiny)
+library(colourpicker)
 library(tidyverse)
 
 bcl <- read.csv("bcl-data.csv", stringsAsFactors = FALSE)
@@ -44,7 +45,10 @@ ui <- fluidPage(
                    selected = "WINE")
     ),
     mainPanel(
+      colourInput("colourBar", "Select colour", "blue"),
       plotOutput("price_hist"),
+      downloadButton('downloadBut',"Download the bcl data"),
+      fluidRow(column(7,dataTableOutput('dto'))),
       DT::dataTableOutput("bcl_data")
     )
   )
@@ -56,17 +60,26 @@ ui <- fluidPage(
 # Server function is a function of input and output
 # Define server logic required to draw a histogram
 server <- function(input, output) {
+  
   bcl_filtered <- reactive(bcl %>% 
     filter(Price < input$priceInput[2],
            Price > input$priceInput[1],
            Type == input$typeInput))
   output$price_hist <- renderPlot({
-    bcl_filtered() %>% 
-      ggplot(aes(Price)) + geom_histogram()
+      bcl_filtered() %>% 
+      ggplot(aes(Price)) + geom_histogram(fill = input$colourBar) 
   })
-  output$bcl_data <- DT::renderDataTable({bcl_filtered()})
   
+  output$bcl_data <- DT::renderDataTable({bcl_filtered()})
+  output$downloadBut <- downloadHandler(
+    filename = function(){"bclData.csv"},
+    content = function(filename){
+      write.csv(bcl_filtered(), filename)
+    }
+  )
+
 }
+  
 
 # Run the application 
 shinyApp(ui = ui, server = server)
