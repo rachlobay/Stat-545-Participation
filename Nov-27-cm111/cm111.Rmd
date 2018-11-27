@@ -64,6 +64,8 @@ simple_page %>% html_structure()
 
 ```{r}
 simple_page %>%  html_text()
+
+# pipe into cat() to get rendered version without \n
 ```
 
 4. `html_nodes()`: selects only relevant parts of the html, constructing a (special) list of all relevant pieces. 
