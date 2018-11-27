@@ -63,7 +63,7 @@ simple_page %>% html_structure()
 3. Apply `html_text()` to `simple_page`: gives me all the text (not the tags).
 
 ```{r}
-
+simple_page %>%  html_text()
 ```
 
 4. `html_nodes()`: selects only relevant parts of the html, constructing a (special) list of all relevant pieces. 
