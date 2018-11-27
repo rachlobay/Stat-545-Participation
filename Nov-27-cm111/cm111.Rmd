@@ -76,11 +76,12 @@ simple_page %>%  html_text()
 
 ```{r}
 simple_page %>% 
-	html_nodes(FILL_THIS_IN)
+	html_nodes("p") %>%  html_text()
 simple_page %>% 
-	html_nodes(FILL_THIS_IN)
+	html_nodes("a")
 simple_page %>% 
-	html_nodes(FILL_THIS_IN)
+	html_nodes("#wiki") %>% 
+  html_text()
 ```
 
 
@@ -96,16 +97,16 @@ Return the text in `simple_page` contained within:
 
 ```{r}
 simple_page %>% 
-	html_nodes(FILL_THIS_IN) %>% 
-	FILL_THIS_IN
+	html_nodes("p a") %>% 
+	html_text()
 ```
 
 2. any tag.
 
 ```{r}
 simple_page %>% 
-	html_nodes(FILL_THIS_IN) %>% 
-	FILL_THIS_IN
+	html_nodes("*") %>% 
+	html_text()
 ```
 
 
@@ -117,14 +118,16 @@ We can extract other things besides the text between the tags:
 
 ```{r}
 simple_page %>% 
-	html_nodes("*")
+	html_nodes("*") %>% 
+  html_name()
 ```
 
 - `html_attrs()` gives all attributes of the tags. Try it with `html_nodes("a")`:
 
 ```{r}
 simple_page %>% 
-	html_nodes("a")
+	html_nodes("a") %>% 
+  html_attr(name = "href")
 ```
 
 - `html_attr()` (not plural) extracts a vector of the attribute contents by the `name` argument. Try `name="href"` with `html_nodes("a")`:
@@ -139,8 +142,8 @@ simple_page %>%
 
 ```{r}
 tibble(
-	text = FILL_THIS_IN,
-	url  = FILL_THIS_IN
+	text = ,
+	url  = 
 )
 ```
 
@@ -154,7 +157,9 @@ Viewing the source to find the CSS is horrendous. In comes [`SelectorGadget`](ht
 2. Put the CSS selection in the `html_nodes()`.
 
 ```{r}
-
+read_html("https://www.musixmatch.com/search/kane%20brown") %>% 
+  html_nodes(".track-card .media-card-title") %>% 
+  rvest::html_text()
 ```
 
 ## Reading a table
@@ -163,7 +168,7 @@ Goal: extract the Wikipedia table of the [tallest steel roller coasters](https:/
 
 ```{r}
 read_html("https://en.wikipedia.org/wiki/List_of_roller_coaster_rankings") %>% 
-	FILL_THIS_IN
+	html_table()
 ```
 
 
