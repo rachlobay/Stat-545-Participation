@@ -144,7 +144,7 @@ simple_page %>%
 tibble(
 	text = simple_page %>% 
 	html_nodes("a") %>% 
-	  html_name(),
+	  html_text(),
 	url  = simple_page %>% 
 	html_nodes("a") %>% 
   html_attr(name = "href")
