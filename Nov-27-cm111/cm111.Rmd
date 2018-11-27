@@ -142,8 +142,12 @@ simple_page %>%
 
 ```{r}
 tibble(
-	text = ,
-	url  = 
+	text = simple_page %>% 
+	html_nodes("a") %>% 
+	  html_name(),
+	url  = simple_page %>% 
+	html_nodes("a") %>% 
+  html_attr(name = "href")
 )
 ```
 
@@ -168,7 +172,8 @@ Goal: extract the Wikipedia table of the [tallest steel roller coasters](https:/
 
 ```{r}
 read_html("https://en.wikipedia.org/wiki/List_of_roller_coaster_rankings") %>% 
-	html_table()
+	html_table(fill=TRUE) %>% 
+  .[[2]] # for second table
 ```
 
 
