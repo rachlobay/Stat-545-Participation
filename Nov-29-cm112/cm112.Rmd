@@ -112,7 +112,9 @@ __OMDb Exercise__:
 2. Form a request!
 
 ```{r}
-s
+jsonlite::fromJSON("http://www.omdbapi.com/?apikey=[8a1de5d2]&")
+"
+8a1de5d2
 ```
 
 
